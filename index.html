@@ -211,7 +211,7 @@ button.tiny{font-size:11.5px;padding:5px 11px;border-radius:8px}
 .distraction-badge{position:absolute;top:14px;right:18px;background:var(--accent-soft);color:var(--accent);padding:5px 13px;border-radius:100px;font-size:12px;border:1px solid var(--accent);font-weight:600}
 .timer-display{text-align:center;padding:18px 0 24px;border-bottom:2px dashed var(--border);margin-bottom:20px}
 .mode-label{font-family:'Fraunces',serif;font-size:22px;color:var(--primary);margin-bottom:6px;font-weight:500}
-.timer-big{font-family:'Fraunces',serif;font-size:80px;font-weight:500;color:var(--text);line-height:1;letter-spacing:2px;transition:color .3s;letter-spacing:-2px}
+.timer-big{font-family:'Fraunces',serif;font-size:80px;font-weight:500;color:var(--text);line-height:1;letter-spacing:-2px;transition:color .3s}
 .timer-big.warn{color:var(--accent)}
 .timer-bar{height:8px;background:var(--card2);border-radius:4px;overflow:hidden;margin:16px auto 0;max-width:480px}
 .timer-bar-fill{height:100%;background:linear-gradient(90deg,var(--primary),var(--accent));width:0%;transition:width 1s linear;border-radius:4px}
@@ -317,7 +317,6 @@ body.dark .forest-view{background:linear-gradient(180deg,#1f2818 0%,#141b0e 100%
 .entry-mini-title{font-family:'Fraunces',serif;font-size:15px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
 .entry-mini-meta{font-size:10.5px;color:var(--muted);margin-top:2px}
 
-/* ==== ADMIN TABS ==== */
 .admin-tabs{display:flex;gap:5px;margin-bottom:16px;padding:5px;background:var(--nav-bg);border-radius:12px;border:1px solid var(--border);overflow-x:auto}
 .admin-tabs button{flex:1;min-width:90px;border:0;background:transparent;padding:10px 12px;font-size:12.5px;color:var(--muted);border-radius:9px;white-space:nowrap;box-shadow:none;gap:5px}
 .admin-tabs button:hover{background:transparent;transform:none;color:var(--text)}
@@ -358,18 +357,15 @@ body.dark .forest-view{background:linear-gradient(180deg,#1f2818 0%,#141b0e 100%
 .switch input:checked + .switch-track{background:var(--primary)}
 .switch input:checked + .switch-track::after{transform:translateX(20px)}
 
-/* ==== REPORT BUTTON ON POST ==== */
 .report-btn{background:transparent;border:0;box-shadow:none;color:var(--muted2);font-size:11.5px;padding:2px 6px;cursor:pointer}
 .report-btn:hover{color:var(--accent);background:transparent;transform:none}
 
-/* ==== ANNOUNCEMENT BANNER ==== */
 .announce-banner{background:linear-gradient(135deg,rgba(201,152,42,.12),rgba(201,152,42,.05));border:1px solid var(--gold);border-radius:12px;padding:13px 16px;margin-bottom:14px;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
 .announce-banner-content{flex:1;min-width:0}
 .announce-banner-title{font-family:'Fraunces',serif;font-size:17px;color:var(--text);font-weight:500;margin-bottom:4px}
 .announce-banner-body{font-size:13px;color:var(--text2);line-height:1.5;white-space:pre-wrap}
 .announce-banner-close{background:transparent;border:0;color:var(--muted);font-size:16px;padding:0 4px;cursor:pointer;flex-shrink:0}
 
-/* ===== POSTS ===== */
 .post-composer{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin-bottom:14px;box-shadow:0 2px 8px var(--shadow)}
 .post-composer textarea{width:100%;min-height:70px;padding:11px;border:1.5px solid var(--border);background:var(--card);font-family:inherit;font-size:14px;color:var(--text);border-radius:10px;outline:none;resize:vertical;line-height:1.6}
 .post-composer textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--accent-soft)}
@@ -424,7 +420,6 @@ body.dark .forest-view{background:linear-gradient(180deg,#1f2818 0%,#141b0e 100%
 .notif-text b{color:var(--text)}
 .notif-time{font-size:10.5px;color:var(--muted2);margin-top:2px}
 
-/* profile */
 .profile-banner{height:120px;border-radius:16px 16px 0 0;background:linear-gradient(135deg,var(--primary),var(--accent));position:relative;overflow:hidden}
 .profile-banner img{width:100%;height:100%;object-fit:cover}
 .profile-header{padding:0 18px 14px;margin-top:-42px;position:relative;z-index:2;text-align:center}
@@ -448,7 +443,6 @@ body.dark .forest-view{background:linear-gradient(180deg,#1f2818 0%,#141b0e 100%
 .profile-tabs button:hover{background:transparent;transform:none}
 .profile-tabs button.active{background:var(--card);color:var(--primary);font-weight:600;box-shadow:0 2px 5px var(--shadow)}
 
-/* modals */
 .modal-overlay{position:fixed;inset:0;background:rgba(20,15,10,.6);z-index:100;display:none;align-items:center;justify-content:center;padding:14px;backdrop-filter:blur(4px)}
 .modal-overlay.show{display:flex;animation:fadeIn .2s}
 .modal{background:var(--card);max-width:620px;width:100%;max-height:88vh;overflow-y:auto;padding:24px 26px;border-radius:20px;box-shadow:0 25px 60px rgba(0,0,0,.4);border:1px solid var(--border);position:relative}
@@ -500,9 +494,12 @@ body.dark .forest-view{background:linear-gradient(180deg,#1f2818 0%,#141b0e 100%
 .warn-card p{font-size:14px;color:var(--text2);line-height:1.7;margin:0 0 14px}
 .warn-count{font-family:'Fraunces',serif;font-size:44px;color:var(--accent);font-weight:700}
 
+.uname-suggestion:hover{text-decoration:underline}
+#unameInput.valid{border-color:var(--primary);box-shadow:0 0 0 3px var(--accent-soft)}
+#unameInput.invalid{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+
 .bottom-nav{display:none}
 
-/* MOBILE — App-like */
 @media (max-width:880px){
   body{padding:10px 8px 82px}
   .brand h1{font-size:22px;letter-spacing:-.3px}
@@ -588,7 +585,6 @@ body.dark .forest-view{background:linear-gradient(180deg,#1f2818 0%,#141b0e 100%
     <button data-tab="dashboard">&#128202; আমার</button>
   </nav>
 
-  <!-- WRITE -->
   <div class="view active" id="viewWrite">
     <div id="announceBannerWrap"></div>
     <main class="notebook">
@@ -622,7 +618,6 @@ body.dark .forest-view{background:linear-gradient(180deg,#1f2818 0%,#141b0e 100%
     </main>
   </div>
 
-  <!-- STUDY -->
   <div class="view" id="viewStudy">
     <div class="wrap" id="studySetupView">
       <div class="head"><h2>পড়ার পোর্টাল</h2><span style="font-size:12.5px;color:var(--muted);background:var(--card2);border:1px solid var(--border);padding:6px 13px;border-radius:100px" id="studyTotalTime">মোট: ০ মিনিট</span></div>
@@ -700,7 +695,6 @@ body.dark .forest-view{background:linear-gradient(180deg,#1f2818 0%,#141b0e 100%
     </div>
   </div>
 
-  <!-- COMMUNITY -->
   <div class="view" id="viewCommunity">
     <div class="wrap">
       <div class="subtabs" id="communitySubtabs">
@@ -723,7 +717,7 @@ body.dark .forest-view{background:linear-gradient(180deg,#1f2818 0%,#141b0e 100%
         <button class="ghost" id="loadMoreHome" style="display:none;margin:16px auto 0;padding:9px 24px">আরো দেখো</button>
       </div>
       <div class="community-panel" id="ctabSearch" style="display:none">
-        <input id="userSearchInput" type="text" placeholder="নাম বা ইমেইল দিয়ে খুঁজো..." style="width:100%;padding:12px 15px;border:1.5px solid var(--border);background:var(--card);font-family:inherit;font-size:14px;color:var(--text);border-radius:12px;outline:none;margin-bottom:14px">
+        <input id="userSearchInput" type="text" placeholder="ইউজারনেম দিয়ে খুঁজো (@arif_09)" style="width:100%;padding:12px 15px;border:1.5px solid var(--border);background:var(--card);font-family:inherit;font-size:14px;color:var(--text);border-radius:12px;outline:none;margin-bottom:14px">
         <div id="searchResults"></div>
       </div>
       <div class="community-panel" id="ctabMessages" style="display:none">
@@ -737,7 +731,6 @@ body.dark .forest-view{background:linear-gradient(180deg,#1f2818 0%,#141b0e 100%
     </div>
   </div>
 
-  <!-- DASHBOARD -->
   <div class="view" id="viewDashboard">
     <div class="wrap">
       <div class="head"><h2>আমার ড্যাশবোর্ড</h2><div class="head-row"><button id="viewMyProfileBtn" class="ghost tiny">প্রোফাইল</button><button id="refreshDash" class="ghost tiny">রিফ্রেশ</button></div></div>
@@ -760,7 +753,6 @@ body.dark .forest-view{background:linear-gradient(180deg,#1f2818 0%,#141b0e 100%
     </div>
   </div>
 
-  <!-- ADMIN -->
   <div class="view" id="viewAdmin">
     <div class="wrap">
       <div class="head"><h2>অ্যাডমিন প্যানেল</h2><div class="head-row"><button id="adminFullBackup" class="ghost tiny">&#128190; ব্যাকআপ</button><button id="refreshUsers" class="ghost tiny">&#128260; রিফ্রেশ</button></div></div>
@@ -773,7 +765,6 @@ body.dark .forest-view{background:linear-gradient(180deg,#1f2818 0%,#141b0e 100%
         <button data-atab="announce">&#128227; ঘোষণা</button>
         <button data-atab="settings">&#9881; সেটিংস</button>
       </div>
-
       <div class="admin-panel" id="atabOverview">
         <div class="stats-grid">
           <div class="stat-box"><div class="stat-label">মোট ইউজার</div><div class="stat-value" id="statUsers">-</div></div>
@@ -786,32 +777,26 @@ body.dark .forest-view{background:linear-gradient(180deg,#1f2818 0%,#141b0e 100%
         <h3 class="section-title">নতুন ইউজার (সাপ্তাহিক)</h3>
         <div id="chartWeekly"></div>
       </div>
-
       <div class="admin-panel" id="atabUsers" style="display:none">
-        <input id="adminSearch" class="admin-search" type="text" placeholder="ইমেইল দিয়ে খুঁজো...">
+        <input id="adminSearch" class="admin-search" type="text" placeholder="ইউজারনেম / ইমেইল দিয়ে খুঁজো...">
         <div class="user-list" id="userList"></div>
       </div>
-
       <div class="admin-panel" id="atabPosts" style="display:none">
         <input id="adminPostSearch" class="admin-search" type="text" placeholder="পোস্ট / লেখক দিয়ে খুঁজো...">
         <div id="adminPostsList"></div>
       </div>
-
       <div class="admin-panel" id="atabReports" style="display:none">
         <div class="head-row" style="margin-bottom:12px"><button class="ghost tiny" id="refreshReports">রিফ্রেশ</button></div>
         <div id="reportsList"></div>
       </div>
-
       <div class="admin-panel" id="atabActivity" style="display:none">
         <div class="head-row" style="margin-bottom:12px"><button class="ghost tiny" id="refreshActivity">রিফ্রেশ</button><button class="ghost tiny" id="clearActivity">মুছে ফেলো</button></div>
         <div id="activityList"></div>
       </div>
-
       <div class="admin-panel" id="atabAnnounce" style="display:none">
         <div class="head" style="padding-bottom:8px"><h2 style="font-size:22px">&#128227; ঘোষণা</h2><button class="primary tiny" id="newAnnounceBtn">+ নতুন</button></div>
         <div id="announceList"></div>
       </div>
-
       <div class="admin-panel" id="atabSettings" style="display:none">
         <div id="settingsList"></div>
       </div>
@@ -835,12 +820,34 @@ body.dark .forest-view{background:linear-gradient(180deg,#1f2818 0%,#141b0e 100%
 <div class="modal-overlay" id="breakModal"><div class="modal"><div id="breakModalContent"></div></div></div>
 <div class="cmd-overlay" id="cmdOverlay"><div class="cmd-box"><input class="cmd-input" id="cmdInput" placeholder="কী খুঁজছো? (Ctrl+K)" autocomplete="off"><div class="cmd-list" id="cmdList"></div></div></div>
 <div class="tour-overlay" id="tourOverlay"><div class="tour-box" id="tourBox"></div></div>
+<div class="modal-overlay" id="usernameModal">
+  <div class="modal" style="max-width:460px">
+    <h2 class="modal-title">তোমার ইউজারনেম বেছে নাও</h2>
+    <p style="font-size:13.5px;color:var(--muted);line-height:1.6;margin-bottom:16px">এটা তোমার পরিচয় — সবাই এই নাম দিয়ে খুঁজে পাবে। ইমেইল কেউ দেখতে পাবে না।</p>
+    <div class="field">
+      <label>ইউজারনেম (a-z, 0-9, _)</label>
+      <div style="display:flex;align-items:center;gap:6px">
+        <span style="font-size:18px;font-weight:600;color:var(--muted)">@</span>
+        <input id="unameInput" type="text" maxlength="20" placeholder="arif_09" style="flex:1;font-size:16px;letter-spacing:.5px" autocomplete="off" spellcheck="false">
+      </div>
+      <p id="unameStatus" style="font-size:12.5px;margin-top:7px;min-height:16px;color:var(--muted)">৩-২০ অক্ষর · ছোট হাতের ইংরেজি, সংখ্যা, আন্ডারস্কোর</p>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;align-items:center">
+      <span style="font-size:12px;color:var(--muted)">সাজেশন:</span>
+      <span id="unameSuggest1" class="uname-suggestion" style="font-size:12.5px;color:var(--primary);cursor:pointer;text-decoration:underline">—</span>
+      <span id="unameSuggest2" class="uname-suggestion" style="font-size:12.5px;color:var(--primary);cursor:pointer;text-decoration:underline">—</span>
+      <span id="unameSuggest3" class="uname-suggestion" style="font-size:12.5px;color:var(--primary);cursor:pointer;text-decoration:underline">—</span>
+    </div>
+    <button class="primary big" id="unameSaveBtn" disabled>সংরক্ষণ করো</button>
+    <p style="font-size:11.5px;color:var(--muted);text-align:center;margin-top:10px">পরে প্রোফাইল থেকে বদলাতে পারবে</p>
+  </div>
+</div>
 <div id="toast"></div>
 
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getAuth, onAuthStateChanged, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { getFirestore, collection, doc, addDoc, updateDoc, deleteDoc, onSnapshot, query, orderBy, getDoc, setDoc, getDocs, where, limit, startAfter, arrayUnion, arrayRemove, increment } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getFirestore, collection, doc, addDoc, updateDoc, deleteDoc, onSnapshot, query, orderBy, getDoc, setDoc, getDocs, where, limit, startAfter, startAt, endAt, arrayUnion, arrayRemove, increment } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAmTciv-fMB1ECq0-mjR_vpADOGN4Ricqo",
@@ -887,14 +894,15 @@ const STUDY_BADGES = [
 
 const TOUR_STEPS = [
   { title:'স্বাগতম! 👋', text:'এখানে লেখা, পড়া, কমিউনিটি — সব এক জায়গায়।' },
+  { title:'ইউজারনেম ✨', text:'তোমার পরিচয় @username — ইমেইল কেউ দেখবে না।' },
   { title:'লেখা ✍️', text:'কবিতা/গল্প লিখে "সবার সাথে শেয়ার" দিলে সবার ফিডে যাবে।' },
   { title:'পড়া 📚', text:'টাইমার, To-Do, ফ্ল্যাশকার্ড, বই — সব সরঞ্জাম আছে।' },
-  { title:'কমিউনিটি 🌐', text:'পোস্ট, লাইক, কমেন্ট, ফলো, DM — বন্ধুদের সাথে থাকো।' },
-  { title:'প্রোফাইল 👤', text:'উপরের 👤 বাটনে ক্লিক করে প্রোফাইল সাজাও।' }
+  { title:'কমিউনিটি 🌐', text:'পোস্ট, লাইক, কমেন্ট, ফলো, DM — বন্ধুদের সাথে থাকো।' }
 ];
 
 const EMOJI_AVATARS = ['&#128512;','&#128513;','&#128525;','&#129321;','&#128526;','&#129299;','&#129302;','&#128520;','&#128049;','&#128054;','&#128048;','&#129412;','&#128060;','&#129408;','&#127774;','&#127769;','&#11088;','&#127775;','&#128293;','&#127808;','&#127800;','&#127801;','&#127793;','&#127795;','&#128218;','&#128221;','&#127891;','&#127919;','&#127942;','&#128142;'];
 const AVATAR_COLORS = ['#5d7035','#b8453a','#c9982a','#6b4a8a','#4a6fa8','#8b5a2b','#4a9a70','#a15f38'];
+const RESERVED_USERNAMES = ['admin','root','system','help','support','official','the_epilogue','anonymous','me','you','null','undefined','khata','amar_khata'];
 
 const $ = s => document.querySelector(s);
 const $$ = s => document.querySelectorAll(s);
@@ -964,6 +972,8 @@ let announcements=[], unsubAnnounce=null;
 let appConfig={features:{posts:true,chat:true,community:true,study:true}};
 let unsubConfig=null;
 let adminPostsCache=[], adminUsersCache=[], adminReportsCache=[], adminActivityCache=[];
+let usernameAvailable = false;
+let usernameCheckTimer = null;
 
 /* ============ THEME ============ */
 (function(){ const s=localStorage.getItem('theme')||'light'; if(s==='dark') document.body.classList.add('dark'); updDark(); })();
@@ -981,9 +991,10 @@ async function logActivity(type, detail){
     await addDoc(collection(db,'activity_log'), {
       uid: uid, userName: (userDocCache&&userDocCache.displayName)||currentUser?.email||'?',
       userEmail: currentUser?.email || '',
+      userUsername: (userDocCache&&userDocCache.username) || '',
       type: type, detail: detail||'', at: Date.now()
     });
-  } catch(e){ /* silent */ }
+  } catch(e){}
 }
 
 /* ============ AUTH ============ */
@@ -1057,10 +1068,10 @@ async function ensureUserDoc(user){
   const ref = doc(db,'users',user.uid);
   const snap = await getDoc(ref);
   const now = Date.now();
+  let needUsername = false;
   if(!snap.exists()){
-    const d={uid:user.uid,email:user.email,displayName:user.displayName||user.email.split('@')[0],createdAt:now,lastLogin:now,disabled:false,bannedUntil:0,streak:{current:0,longest:0,lastDate:''},studyStreak:{current:0,longest:0,lastDate:''},dailyGoal:120,avatar:null,avatarColor:AVATAR_COLORS[0],bio:'',banner:null,socialLinks:{},followersCount:0,followingCount:0};
-    await setDoc(ref,d); userDocCache=d;
-    await syncPublicProfile();
+    const d={uid:user.uid,email:user.email,displayName:user.displayName||user.email.split('@')[0],username:null,createdAt:now,lastLogin:now,disabled:false,bannedUntil:0,streak:{current:0,longest:0,lastDate:''},studyStreak:{current:0,longest:0,lastDate:''},dailyGoal:120,avatar:null,avatarColor:AVATAR_COLORS[0],bio:'',banner:null,socialLinks:{},followersCount:0,followingCount:0};
+    await setDoc(ref,d); userDocCache=d; needUsername = true;
   } else {
     const data = snap.data();
     if(data.disabled===true){ alert('অ্যাকাউন্ট নিষ্ক্রিয়।'); await signOut(auth); return; }
@@ -1072,22 +1083,160 @@ async function ensureUserDoc(user){
     }
     await updateDoc(ref,{lastLogin:now});
     userDocCache = Object.assign({},data,{lastLogin:now});
-    await syncPublicProfile();
+    if(!data.username) needUsername = true;
   }
   updStreakChip();
+  if(needUsername){
+    setTimeout(()=>openUsernameModal(), 500);
+  } else {
+    await syncPublicProfile();
+  }
 }
 async function syncPublicProfile(){
   if(!userDocCache) return;
   const u = userDocCache;
   try { await setDoc(doc(db,'user_profiles',uid), {
-    uid: uid, displayName: u.displayName||currentUser.email.split('@')[0], email: currentUser.email,
-    avatar: u.avatar||null, avatarColor: u.avatarColor||AVATAR_COLORS[0],
-    bio: u.bio||'', banner: u.banner||null, socialLinks: u.socialLinks||{},
-    followers: u.followersCount||0, following: u.followingCount||0,
+    uid: uid,
+    displayName: u.displayName||currentUser.email.split('@')[0],
+    username: u.username || null,
+    avatar: u.avatar||null,
+    avatarColor: u.avatarColor||AVATAR_COLORS[0],
+    bio: u.bio||'',
+    banner: u.banner||null,
+    socialLinks: u.socialLinks||{},
+    followers: u.followersCount||0,
+    following: u.followingCount||0,
     updatedAt: Date.now()
-  }, { merge: true }); } catch(e){}
+  }, { merge: true }); } catch(e){ console.error('profile sync', e); }
 }
 function updStreakChip(){ const s=(userDocCache&&userDocCache.streak)||{current:0}; $('#streakChip').innerHTML='&#128293; '+toBn(s.current||0); }
+
+/* ============ USERNAME SYSTEM ============ */
+function suggestUsernameFromEmail(email, displayName){
+  const base = (email||'').split('@')[0].toLowerCase().replace(/[^a-z0-9_]/g,'_').replace(/^_+|_+$/g,'').slice(0,15) || 'user';
+  const nameBase = (displayName||'').toLowerCase().replace(/[^a-z0-9_]/g,'').slice(0,15) || base;
+  return { base: base.length>=3 ? base : base + '_' + Math.floor(Math.random()*900+100), nameBase };
+}
+async function generateSuggestions(){
+  const { base, nameBase } = suggestUsernameFromEmail(currentUser.email, userDocCache?.displayName);
+  const candidates = [];
+  const rnd = () => Math.floor(Math.random()*9000+1000);
+  candidates.push(base);
+  candidates.push(nameBase + rnd().toString().slice(0,2));
+  candidates.push(nameBase + '_' + rnd().toString().slice(0,3));
+  candidates.push(base + Math.floor(Math.random()*90+10));
+  const available = [];
+  for(const c of candidates){
+    if(available.length >= 3) break;
+    if(c.length < 3 || c.length > 20) continue;
+    if(RESERVED_USERNAMES.includes(c)) continue;
+    try {
+      const snap = await getDoc(doc(db,'usernames',c));
+      if(!snap.exists()) available.push(c);
+    } catch(e){}
+  }
+  return available;
+}
+function validateUsername(u){
+  if(!u) return { ok:false, msg:'ইউজারনেম দাও' };
+  if(u.length < 3) return { ok:false, msg:'কমপক্ষে ৩ অক্ষর' };
+  if(u.length > 20) return { ok:false, msg:'সর্বোচ্চ ২০ অক্ষর' };
+  if(!/^[a-z]/.test(u)) return { ok:false, msg:'অক্ষর দিয়ে শুরু হতে হবে' };
+  if(!/^[a-z0-9_]+$/.test(u)) return { ok:false, msg:'শুধু a-z, 0-9, _' };
+  if(RESERVED_USERNAMES.includes(u)) return { ok:false, msg:'এই নাম ব্যবহার করা যাবে না' };
+  return { ok:true, msg:'সঠিক' };
+}
+async function openUsernameModal(){
+  if(!userDocCache) return;
+  $('#unameInput').value = '';
+  $('#unameStatus').textContent = '৩-২০ অক্ষর · ছোট হাতের ইংরেজি, সংখ্যা, আন্ডারস্কোর';
+  $('#unameStatus').style.color = 'var(--muted)';
+  $('#unameInput').className = '';
+  $('#unameSaveBtn').disabled = true;
+  usernameAvailable = false;
+  $('#usernameModal').classList.add('show');
+  const s = await generateSuggestions();
+  [1,2,3].forEach(i => {
+    const el = $('#unameSuggest'+i);
+    const val = s[i-1] || '';
+    el.textContent = val ? '@'+val : '';
+    el.style.display = val ? 'inline' : 'none';
+    el.onclick = () => { if(val){ $('#unameInput').value = val; checkUsername(); } };
+  });
+  setTimeout(()=>$('#unameInput').focus(), 200);
+}
+async function checkUsername(){
+  const u = ($('#unameInput').value||'').trim().toLowerCase();
+  $('#unameInput').value = u;
+  const v = validateUsername(u);
+  if(!v.ok){
+    $('#unameStatus').textContent = v.msg;
+    $('#unameStatus').style.color = 'var(--accent)';
+    $('#unameInput').className = u ? 'invalid' : '';
+    $('#unameSaveBtn').disabled = true;
+    usernameAvailable = false;
+    return;
+  }
+  $('#unameStatus').textContent = 'চেক করা হচ্ছে...';
+  $('#unameStatus').style.color = 'var(--muted)';
+  try {
+    const snap = await getDoc(doc(db,'usernames',u));
+    if(snap.exists() && snap.data().uid !== uid){
+      $('#unameStatus').textContent = '@'+u+' আগেই নেওয়া হয়েছে';
+      $('#unameStatus').style.color = 'var(--accent)';
+      $('#unameInput').className = 'invalid';
+      $('#unameSaveBtn').disabled = true;
+      usernameAvailable = false;
+    } else {
+      $('#unameStatus').textContent = '@'+u+' ✓ ফাঁকা আছে';
+      $('#unameStatus').style.color = 'var(--primary)';
+      $('#unameInput').className = 'valid';
+      $('#unameSaveBtn').disabled = false;
+      usernameAvailable = true;
+    }
+  } catch(e){
+    $('#unameStatus').textContent = 'সমস্যা — আবার চেষ্টা করো';
+    $('#unameStatus').style.color = 'var(--accent)';
+    $('#unameSaveBtn').disabled = true;
+    usernameAvailable = false;
+  }
+}
+$('#unameInput')?.addEventListener('input', () => {
+  clearTimeout(usernameCheckTimer);
+  usernameCheckTimer = setTimeout(checkUsername, 400);
+});
+$('#unameSaveBtn')?.addEventListener('click', async () => {
+  if(!usernameAvailable) return;
+  const u = ($('#unameInput').value||'').trim().toLowerCase();
+  $('#unameSaveBtn').disabled = true;
+  $('#unameSaveBtn').textContent = 'সংরক্ষণ...';
+  try {
+    if(userDocCache.username && userDocCache.username !== u){
+      try { await deleteDoc(doc(db,'usernames',userDocCache.username)); } catch(e){}
+    }
+    await setDoc(doc(db,'usernames',u), { uid: uid, at: Date.now() });
+    await updateDoc(doc(db,'users',uid), { username: u });
+    userDocCache.username = u;
+    await syncPublicProfile();
+    await logActivity('username_set', u);
+    $('#usernameModal').classList.remove('show');
+    toast('@'+u+' ✓');
+  } catch(e){
+    console.error(e);
+    toast('সমস্যা: '+e.message);
+    $('#unameSaveBtn').disabled = false;
+    $('#unameSaveBtn').textContent = 'সংরক্ষণ করো';
+  }
+});
+async function uidFromUsername(username){
+  if(!username) return null;
+  const u = String(username).toLowerCase().replace(/^@/,'').trim();
+  if(!u) return null;
+  try {
+    const snap = await getDoc(doc(db,'usernames',u));
+    return snap.exists() ? snap.data().uid : null;
+  } catch(e){ return null; }
+}
 
 /* ============ AVATAR ============ */
 function renderAvatar(user, size){
@@ -1123,9 +1272,7 @@ function applyFeatures(){
   if(commBottom) commBottom.style.display = f.community===false ? 'none' : '';
   const composer = $('#composer');
   if(composer) composer.style.display = f.posts===false ? 'none' : '';
-  $$('#communitySubtabs button').forEach(b=>{
-    if(b.dataset.ctab==='messages') b.style.display = f.chat===false ? 'none' : '';
-  });
+  $$('#communitySubtabs button').forEach(b=>{ if(b.dataset.ctab==='messages') b.style.display = f.chat===false ? 'none' : ''; });
   const studyTab = document.querySelector('#navTabs button[data-tab="study"]');
   const studyBottom = document.querySelector('#bottomNav button[data-tab="study"]');
   if(studyTab) studyTab.style.display = f.study===false ? 'none' : '';
@@ -1141,8 +1288,7 @@ function subscribeAnnouncements(){
   }, err=>console.error(err));
 }
 function renderAnnounceBanner(){
-  const wrap = $('#announceBannerWrap');
-  if(!wrap) return;
+  const wrap = $('#announceBannerWrap'); if(!wrap) return;
   const dismissed = JSON.parse(localStorage.getItem('dismissedAnnounce')||'[]');
   const active = announcements.find(a => !dismissed.includes(a.id) && !a.hidden);
   if(!active){ wrap.innerHTML=''; return; }
@@ -1309,7 +1455,8 @@ function updTopbarProfile(){
   const label = $('#userLabel');
   if(!label || !userDocCache || !currentUser) return;
   const name = userDocCache.displayName || currentUser.displayName || currentUser.email;
-  label.innerHTML = esc(name)+(isAdmin?' · অ্যাডমিন':'');
+  const uname = userDocCache.username ? ' @'+userDocCache.username : '';
+  label.innerHTML = esc(name) + '<span style="color:var(--primary)">'+esc(uname)+'</span>' + (isAdmin?' · অ্যাডমিন':'');
 }
 function updComposerAvatar(){
   if(!$('#composerAvatar') || !userDocCache) return;
@@ -1326,6 +1473,7 @@ function openEditProfile(){
     '<h2 class="modal-title">প্রোফাইল এডিট</h2>'+
     '<div style="background:var(--card2);padding:16px;border-radius:14px;margin-bottom:14px;text-align:center;position:relative"><div style="height:80px;border-radius:10px;overflow:hidden;margin:-16px -16px 0;background:linear-gradient(135deg,var(--primary),var(--accent))" id="bannerPreview">'+(u.banner?'<img src="'+u.banner+'" style="width:100%;height:100%;object-fit:cover">':'')+'</div><div class="profile-avatar" id="avatarPreview" style="margin-top:-30px"></div><div class="profile-name" id="previewName" style="font-size:22px">'+esc(u.displayName||'')+'</div></div>'+
     '<div class="field"><label>ব্যানার ছবি</label><input type="file" id="bannerFile" accept="image/*" style="display:none"><button class="ghost tiny" id="bannerBtn">ব্যানার আপলোড</button> <button class="ghost tiny" id="bannerClear">সরাও</button></div>'+
+    '<div class="field"><label>ইউজারনেম (সার্চে এটাই দেখাবে)</label><div style="display:flex;align-items:center;gap:6px"><span style="font-size:17px;font-weight:600;color:var(--muted)">@</span><input id="profUsername" type="text" value="'+esc(u.username||'')+'" maxlength="20" style="flex:1;text-transform:lowercase" autocomplete="off" spellcheck="false"></div><p id="profUnameStatus" style="font-size:12px;margin-top:6px;min-height:14px;color:var(--muted)"></p></div>'+
     '<div class="field"><label>প্রদর্শিত নাম</label><input id="profName" type="text" value="'+esc(u.displayName||'')+'" maxlength="40"></div>'+
     '<div class="field"><label>বায়ো (২ লাইন)</label><textarea id="profBio" maxlength="200" placeholder="নিজের সম্পর্কে দুই লাইন...">'+esc(u.bio||'')+'</textarea></div>'+
     '<p style="font-size:12.5px;color:var(--muted);margin:12px 0 6px">প্রোফাইল ছবি</p>'+
@@ -1358,6 +1506,25 @@ function openEditProfile(){
   $('#bannerClear').addEventListener('click', ()=>{ userDocCache.banner=null; $('#bannerPreview').innerHTML=''; });
   $('#avatarFile').addEventListener('change', async e=>{ const f=e.target.files[0]; if(!f) return; if(f.size>5*1024*1024) return toast('৫MB-এর কম হতে হবে'); toast('প্রসেস...'); try{ profileSelectedAvatar = await compressImage(f, 220, 0.78); profileInitialMode=false; updProfilePreview(); toast('প্রস্তুত'); }catch(err){ toast('সমস্যা'); } });
   $('#bannerFile').addEventListener('change', async e=>{ const f=e.target.files[0]; if(!f) return; if(f.size>5*1024*1024) return toast('৫MB-এর কম'); toast('প্রসেস...'); try{ const dataUrl = await compressImage(f, 800, 0.75); userDocCache.banner = dataUrl; $('#bannerPreview').innerHTML = '<img src="'+dataUrl+'" style="width:100%;height:100%;object-fit:cover">'; toast('প্রস্তুত'); }catch(err){ toast('সমস্যা'); } });
+
+  // username check
+  let newUnameTimer = null;
+  $('#profUsername').addEventListener('input', () => {
+    clearTimeout(newUnameTimer);
+    newUnameTimer = setTimeout(async () => {
+      const u2 = ($('#profUsername').value||'').trim().toLowerCase();
+      $('#profUsername').value = u2;
+      const v = validateUsername(u2);
+      if(!v.ok){ $('#profUnameStatus').textContent = v.msg; $('#profUnameStatus').style.color = 'var(--accent)'; return; }
+      if(u2 === userDocCache.username){ $('#profUnameStatus').textContent = '@'+u2+' (এখন যা আছে)'; $('#profUnameStatus').style.color = 'var(--muted)'; return; }
+      try {
+        const snap = await getDoc(doc(db,'usernames',u2));
+        if(snap.exists() && snap.data().uid !== uid){ $('#profUnameStatus').textContent = '@'+u2+' আগেই নেওয়া'; $('#profUnameStatus').style.color = 'var(--accent)'; }
+        else { $('#profUnameStatus').textContent = '@'+u2+' ✓ ফাঁকা'; $('#profUnameStatus').style.color = 'var(--primary)'; }
+      } catch(e){}
+    }, 400);
+  });
+
   updProfilePreview();
   $('#editProfileModal').classList.add('show');
 }
@@ -1377,6 +1544,10 @@ document.addEventListener('click', async e=>{
   if(e.target.id === 'profSave'){
     const name = $('#profName').value.trim();
     if(!name) return toast('নাম লেখো');
+    const newUname = ($('#profUsername').value||'').trim().toLowerCase();
+    if(!newUname) return toast('ইউজারনেম দাও');
+    const v = validateUsername(newUname);
+    if(!v.ok) return toast(v.msg);
     const bio = $('#profBio').value.trim();
     const socialLinks = { site: $('#socialSite').value.trim(), insta: $('#socialInsta').value.trim(), yt: $('#socialYt').value.trim(), tg: $('#socialTg').value.trim() };
     const avatar = profileSelectedAvatar;
@@ -1384,11 +1555,17 @@ document.addEventListener('click', async e=>{
     const banner = userDocCache.banner || null;
     e.target.disabled = true; e.target.textContent = 'সংরক্ষণ...';
     try {
-      await updateDoc(doc(db,'users',uid),{displayName:name,avatar,avatarColor,bio,banner,socialLinks});
+      if(newUname !== userDocCache.username){
+        const taken = await getDoc(doc(db,'usernames',newUname));
+        if(taken.exists() && taken.data().uid !== uid){ toast('@'+newUname+' আগেই নেওয়া'); e.target.disabled=false; e.target.textContent='সংরক্ষণ করো'; return; }
+        if(userDocCache.username){ try { await deleteDoc(doc(db,'usernames',userDocCache.username)); } catch(err){} }
+        await setDoc(doc(db,'usernames',newUname), { uid: uid, at: Date.now() });
+      }
+      await updateDoc(doc(db,'users',uid),{displayName:name,username:newUname,avatar,avatarColor,bio,banner,socialLinks});
       try{ await updateProfile(currentUser,{displayName:name}); }catch(err){}
       try{ const q = query(collection(db,'public_entries'), where('authorId','==',uid)); const snap = await getDocs(q); await Promise.all(snap.docs.map(d=>updateDoc(d.ref,{authorName:name,authorAvatar:avatar,authorAvatarColor:avatarColor}))); }catch(err){}
       try{ const q2 = query(collection(db,'posts'), where('authorId','==',uid)); const snap2 = await getDocs(q2); await Promise.all(snap2.docs.map(d=>updateDoc(d.ref,{authorName:name,authorAvatar:avatar,authorAvatarColor:avatarColor}))); }catch(err){}
-      userDocCache.displayName=name; userDocCache.avatar=avatar; userDocCache.avatarColor=avatarColor; userDocCache.bio=bio; userDocCache.banner=banner; userDocCache.socialLinks=socialLinks;
+      userDocCache.displayName=name; userDocCache.username=newUname; userDocCache.avatar=avatar; userDocCache.avatarColor=avatarColor; userDocCache.bio=bio; userDocCache.banner=banner; userDocCache.socialLinks=socialLinks;
       await syncPublicProfile();
       updTopbarProfile(); updComposerAvatar();
       feedLoaded=false; postsLoaded=false;
@@ -1443,7 +1620,7 @@ async function openProfileView(userId){
       '<div class="profile-header">'+
         '<div class="profile-avatar">'+avatarHtml+'</div>'+
         '<h2 class="profile-name">'+esc(profile.displayName||'নাম নেই')+'</h2>'+
-        '<p style="font-size:12px;color:var(--muted);margin:0">'+esc(profile.email||'')+'</p>'+
+        '<p style="font-size:14px;color:var(--primary);margin:2px 0 0;font-weight:600">@'+esc(profile.username||'—')+'</p>'+
         (profile.bio?'<p class="profile-bio">'+esc(profile.bio)+'</p>':'')+
         '<div class="profile-stats"><div><b>'+toBn(entryCount)+'</b>লেখা</div><div><b>'+toBn(postCount)+'</b>পোস্ট</div><div><b>'+toBn(profile.followers||0)+'</b>ফলোয়ার</div><div><b>'+toBn(profile.following||0)+'</b>ফলোয়িং</div><div><b>'+toBn(Math.round(studyMin/60))+'</b>ঘণ্টা পড়া</div></div>'+
         (socialHtml.length?'<div class="profile-socials">'+socialHtml.join('')+'</div>':'')+
@@ -1524,7 +1701,7 @@ $('#postSubmitBtn').addEventListener('click', async ()=>{
   $('#postSubmitBtn').disabled = true; $('#postSubmitBtn').textContent = 'পোস্ট...';
   try {
     const name = (userDocCache && userDocCache.displayName) || currentUser.displayName || currentUser.email.split('@')[0];
-    await addDoc(collection(db,'posts'), { authorId: uid, authorName: name, authorAvatar: (userDocCache&&userDocCache.avatar)||null, authorAvatarColor: (userDocCache&&userDocCache.avatarColor)||null, text: text, images: currentPostImages, likes: [], likesCount: 0, commentsCount: 0, createdAt: Date.now() });
+    await addDoc(collection(db,'posts'), { authorId: uid, authorName: name, authorUsername: (userDocCache&&userDocCache.username)||null, authorAvatar: (userDocCache&&userDocCache.avatar)||null, authorAvatarColor: (userDocCache&&userDocCache.avatarColor)||null, text: text, images: currentPostImages, likes: [], likesCount: 0, commentsCount: 0, createdAt: Date.now() });
     $('#postText').value = ''; currentPostImages = []; renderComposerImages();
     toast('পোস্ট ✓');
     logActivity('new_post', text.slice(0,60));
@@ -1584,7 +1761,7 @@ function renderPostCard(p){
   const imagesHtml = (p.images && p.images.length) ? '<div class="post-images '+(p.images.length===1?'one':'two')+'">'+p.images.map(img=>'<div class="post-image"><img src="'+img+'" loading="lazy"></div>').join('')+'</div>' : '';
   return '<div class="post-card" data-post-id="'+p.id+'">'+
     '<div class="post-head">'+renderAvatar({displayName:p.authorName, avatar:p.authorAvatar, avatarColor:p.authorAvatarColor, email:p.authorName}, 40)+
-    '<div class="post-head-info"><span class="post-author-name" data-uid="'+p.authorId+'">'+esc(p.authorName||'অজানা')+'</span><span class="post-time">'+fmtRelative(p.createdAt)+'</span></div>'+
+    '<div class="post-head-info"><span class="post-author-name" data-uid="'+p.authorId+'">'+esc(p.authorName||'অজানা')+(p.authorUsername?' <span style="color:var(--primary);font-size:12px">@'+esc(p.authorUsername)+'</span>':'')+'</span><span class="post-time">'+fmtRelative(p.createdAt)+'</span></div>'+
     (p.authorId!==uid ? '<button class="report-btn post-report" data-id="'+p.id+'" title="রিপোর্ট">&#9888;</button>' : '')+
     (p.authorId===uid ? '<button class="ghost tiny post-del" data-id="'+p.id+'" style="padding:2px 8px">🗑️</button>' : '')+
     '</div>'+(p.text?'<div class="post-text">'+esc(p.text)+'</div>':'')+imagesHtml+
@@ -1649,7 +1826,7 @@ async function openPostModal(postId){
     const p = Object.assign({id:snap.id}, snap.data());
     const liked = (p.likes||[]).includes(uid);
     const imagesHtml = (p.images && p.images.length) ? '<div class="post-images '+(p.images.length===1?'one':'two')+'" style="margin:10px 0">'+p.images.map(img=>'<div class="post-image"><img src="'+img+'"></div>').join('')+'</div>' : '';
-    $('#postModalContent').innerHTML = '<div class="post-head">'+renderAvatar({displayName:p.authorName, avatar:p.authorAvatar, avatarColor:p.authorAvatarColor, email:p.authorName}, 40)+'<div class="post-head-info"><span class="post-author-name" data-uid="'+p.authorId+'" style="cursor:pointer">'+esc(p.authorName)+'</span><span class="post-time">'+fmtDateTime(p.createdAt)+'</span></div></div>'+(p.text?'<div class="modal-body" style="margin-top:10px">'+esc(p.text)+'</div>':'')+imagesHtml+'<div class="modal-actions"><button class="like-btn '+(liked?'liked':'')+'" id="pModalLike">'+(liked?'❤️':'🤍')+' '+toBn((p.likes||[]).length)+'</button></div><div class="comments-section"><h4>মন্তব্য</h4><div id="pModalComments"><p class="empty">লোড...</p></div><div class="comment-form"><input id="pModalCommentInput" placeholder="মন্তব্য লেখো..."><button class="primary" id="pModalCommentSend">পাঠাও</button></div></div>';
+    $('#postModalContent').innerHTML = '<div class="post-head">'+renderAvatar({displayName:p.authorName, avatar:p.authorAvatar, avatarColor:p.authorAvatarColor, email:p.authorName}, 40)+'<div class="post-head-info"><span class="post-author-name" data-uid="'+p.authorId+'" style="cursor:pointer">'+esc(p.authorName)+(p.authorUsername?' <span style="color:var(--primary);font-size:12px">@'+esc(p.authorUsername)+'</span>':'')+'</span><span class="post-time">'+fmtDateTime(p.createdAt)+'</span></div></div>'+(p.text?'<div class="modal-body" style="margin-top:10px">'+esc(p.text)+'</div>':'')+imagesHtml+'<div class="modal-actions"><button class="like-btn '+(liked?'liked':'')+'" id="pModalLike">'+(liked?'❤️':'🤍')+' '+toBn((p.likes||[]).length)+'</button></div><div class="comments-section"><h4>মন্তব্য</h4><div id="pModalComments"><p class="empty">লোড...</p></div><div class="comment-form"><input id="pModalCommentInput" placeholder="মন্তব্য লেখো..."><button class="primary" id="pModalCommentSend">পাঠাও</button></div></div>';
     $('#pModalLike').addEventListener('click', async ()=>{ const likedNow = (p.likes||[]).includes(uid); const ref = doc(db,'posts',postId); try { if(likedNow){ await updateDoc(ref,{likes:arrayRemove(uid),likesCount:increment(-1)}); p.likes=(p.likes||[]).filter(x=>x!==uid); } else { await updateDoc(ref,{likes:arrayUnion(uid),likesCount:increment(1)}); p.likes=(p.likes||[]).concat(uid); if(p.authorId!==uid) await createNotification(p.authorId,'like',postId,'তোমার পোস্টে লাইক'); } openPostModal(postId); loadHomeFeed(false); } catch(err){} });
     $('#pModalCommentSend').addEventListener('click', ()=>postPostComment(postId));
     $('#pModalCommentInput').addEventListener('keydown', ev=>{ if(ev.key==='Enter') postPostComment(postId); });
@@ -1683,20 +1860,42 @@ $('#postModal').addEventListener('click', e=>{ if(e.target.id==='postModal') $('
 let searchUserTimer;
 $('#userSearchInput').addEventListener('input', ()=>{ clearTimeout(searchUserTimer); searchUserTimer = setTimeout(searchUsers, 320); });
 async function searchUsers(){
-  const term = ($('#userSearchInput').value||'').trim().toLowerCase();
+  const raw = ($('#userSearchInput').value||'').trim().toLowerCase();
+  const term = raw.replace(/^@/,'');
   const box = $('#searchResults');
-  if(!term){ box.innerHTML = emptyState('&#128269;','নাম লিখে বন্ধু খোঁজো','নাম বা ইমেইলের অংশ লিখলেই রেজাল্ট আসবে'); return; }
+  if(!term){ box.innerHTML = emptyState('&#128269;','ইউজারনেম দিয়ে বন্ধু খোঁজো','যেমন: @arif_09 লিখো'); return; }
   box.innerHTML = '<p class="empty">খোঁজা হচ্ছে...</p>';
   try {
-    const q = query(collection(db,'user_profiles'), orderBy('displayName'), startAfter(term), limit(20));
-    const q2 = query(collection(db,'user_profiles'), orderBy('displayName'), endAt(term+'\uf8ff'), limit(20));
-    const [s1, s2] = await Promise.all([getDocs(q), getDocs(q2)]);
-    const merged = [...s1.docs, ...s2.docs].reduce((acc,d)=>{ if(!acc.find(x=>x.id===d.id)) acc.push(d); return acc; }, []);
-    const filtered = merged.filter(d=>{ const data = d.data(); if(d.id === uid) return false; return (data.displayName||'').toLowerCase().includes(term) || (data.email||'').toLowerCase().includes(term); }).slice(0, 20);
-    if(!filtered.length){ box.innerHTML = emptyState('&#128533;','কাউকে পাওয়া গেল না','অন্য কীওয়ার্ড দিয়ে চেষ্টা করো'); return; }
-    box.innerHTML = filtered.map(d=>{ const u = d.data(); return '<div class="user-result" data-uid="'+d.id+'">'+renderAvatar({displayName:u.displayName,avatar:u.avatar,avatarColor:u.avatarColor,email:u.email},44)+'<div class="user-result-info"><div class="user-result-name">'+esc(u.displayName||'নাম নেই')+'</div><div class="user-result-bio">'+(u.bio?esc(u.bio):'—')+'</div></div><button class="primary tiny view-profile-btn" data-uid="'+d.id+'">দেখো</button></div>'; }).join('');
+    const results = new Map();
+    if(term.length >= 3 && /^[a-z0-9_]+$/.test(term)){
+      const exact = await uidFromUsername(term);
+      if(exact){ const p = await getDoc(doc(db,'user_profiles',exact)); if(p.exists()) results.set(exact, p.data()); }
+      try {
+        const q1 = query(collection(db,'user_profiles'), orderBy('username'), startAt(term), endAt(term+'\uf8ff'), limit(20));
+        const s1 = await getDocs(q1);
+        s1.forEach(d => { if(!results.has(d.id)) results.set(d.id, d.data()); });
+      } catch(e){}
+    }
+    try {
+      const q2 = query(collection(db,'user_profiles'), orderBy('displayName'), startAt(term), endAt(term+'\uf8ff'), limit(20));
+      const s2 = await getDocs(q2);
+      s2.forEach(d => { if(!results.has(d.id)) results.set(d.id, d.data()); });
+    } catch(e){}
+    results.delete(uid);
+    const list = Array.from(results.entries()).slice(0, 20);
+    if(!list.length){ box.innerHTML = emptyState('&#128533;','কাউকে পাওয়া গেল না','অন্য ইউজারনেম দিয়ে চেষ্টা করো'); return; }
+    box.innerHTML = list.map(([id, u]) => 
+      '<div class="user-result" data-uid="'+id+'">' +
+        renderAvatar({displayName:u.displayName,avatar:u.avatar,avatarColor:u.avatarColor,email:u.displayName},44) +
+        '<div class="user-result-info">' +
+          '<div class="user-result-name">'+esc(u.displayName||'নাম নেই')+' <span style="color:var(--primary);font-size:12px">@'+esc(u.username||'?')+'</span></div>' +
+          '<div class="user-result-bio">'+(u.bio?esc(u.bio):'—')+'</div>' +
+        '</div>' +
+        '<button class="primary tiny view-profile-btn" data-uid="'+id+'">দেখো</button>' +
+      '</div>'
+    ).join('');
     box.querySelectorAll('.user-result').forEach(el=>el.addEventListener('click', ()=>openProfileView(el.dataset.uid)));
-  } catch(err){ box.innerHTML = '<p class="empty">সমস্যা: '+esc(err.message)+'</p>'; }
+  } catch(err){ console.error(err); box.innerHTML = '<p class="empty">সমস্যা: '+esc(err.message)+'</p>'; }
 }
 
 /* ============ NOTIFICATIONS ============ */
@@ -1767,7 +1966,7 @@ async function openChat(chatId, partnerId){
   currentChatId = chatId; currentChatPartner = partnerId;
   $('#chatListView').style.display = 'none';
   $('#chatRoomView').style.display = 'block';
-  try { const partnerProfile = (await getDoc(doc(db,'user_profiles',partnerId))).data() || {}; $('#chatHeader').innerHTML = '<div style="display:flex;gap:8px;align-items:center;cursor:pointer" id="chatHeaderProfile">'+renderAvatar({displayName:partnerProfile.displayName,avatar:partnerProfile.avatar,avatarColor:partnerProfile.avatarColor,email:partnerProfile.email},32)+'<span style="font-weight:600;font-size:14px">'+esc(partnerProfile.displayName||'ব্যবহারকারী')+'</span></div>'; $('#chatHeaderProfile').addEventListener('click', ()=>openProfileView(partnerId)); } catch(e){}
+  try { const partnerProfile = (await getDoc(doc(db,'user_profiles',partnerId))).data() || {}; $('#chatHeader').innerHTML = '<div style="display:flex;gap:8px;align-items:center;cursor:pointer" id="chatHeaderProfile">'+renderAvatar({displayName:partnerProfile.displayName,avatar:partnerProfile.avatar,avatarColor:partnerProfile.avatarColor,email:partnerProfile.email},32)+'<div><span style="font-weight:600;font-size:14px;display:block">'+esc(partnerProfile.displayName||'ব্যবহারকারী')+'</span>'+(partnerProfile.username?'<span style="font-size:11px;color:var(--primary)">@'+esc(partnerProfile.username)+'</span>':'')+'</div></div>'; $('#chatHeaderProfile').addEventListener('click', ()=>openProfileView(partnerId)); } catch(e){}
   try { await updateDoc(doc(db,'chats',chatId),{['unread.'+uid]: 0}); } catch(e){}
   if(unsubMessages) unsubMessages();
   unsubMessages = onSnapshot(query(collection(db,'chats',chatId,'messages'), orderBy('at','asc'), limit(100)), snap=>{
@@ -1824,7 +2023,7 @@ $('#entryModal').addEventListener('click', e=>{ if(e.target.id==='entryModal') $
 $('#genericModalClose').addEventListener('click', ()=>$('#genericModal').classList.remove('show'));
 $('#genericModal').addEventListener('click', e=>{ if(e.target.id==='genericModal') $('#genericModal').classList.remove('show'); });
 
-/* ============ STUDY (existing) ============ */
+/* ============ STUDY ============ */
 function loadStudyTab(){
   if(!loadedTabs.sessions){ loadedTabs.sessions=true; subStudySessions(); }
   if(!loadedTabs.notes){ loadedTabs.notes=true; subStudyNotes(); }
@@ -2128,8 +2327,8 @@ async function loadDashboard(){
     renderForest(totalStudyMin); updGoalUI(); renderDashExams();
   } catch(e){ console.error(e); toast('লোড হয়নি'); }
 }
-$('#exportJson').addEventListener('click', ()=>{ const data={exportedAt:new Date().toISOString(),user:{email:currentUser.email,displayName:currentUser.displayName},entries:entries.map(e=>({title:e.title,body:e.body,type:e.type,tags:e.tags,isPublic:e.isPublic,createdAt:e.createdAt,updatedAt:e.updatedAt})),studyNotes:studyNotes.map(n=>({title:n.title,body:n.body,subject:n.subject})),sessions:studySessions.map(s=>({startedAt:s.startedAt,actualMin:s.actualMin,completed:s.completed}))}; download('আমার-খাতা.json', JSON.stringify(data,null,2), 'application/json'); });
-$('#exportTxt').addEventListener('click', ()=>{ const lines=['আমার খাতা - ব্যাকআপ','নাম: '+(currentUser.displayName||currentUser.email),'তারিখ: '+new Date().toLocaleString('bn-BD'),'','=== লেখা ===','']; entries.forEach((e,i)=>{ lines.push('--- '+(i+1)+' ---'); lines.push('শিরোনাম: '+(e.title||'শিরোনামহীন')); lines.push('ধরন: '+(e.type||'')); lines.push('তারিখ: '+fmtDate(e.createdAt)); if(e.tags&&e.tags.length) lines.push('ট্যাগ: #'+e.tags.join(' #')); lines.push(''); lines.push(e.body||''); lines.push(''); }); lines.push('','=== পড়ার নোট ===',''); studyNotes.forEach((n,i)=>{ lines.push('--- '+(i+1)+' ---'); lines.push('শিরোনাম: '+(n.title||'')); if(n.subject) lines.push('বিষয়: '+n.subject); lines.push(''); lines.push(n.body||''); lines.push(''); }); download('আমার-খাতা.txt', lines.join('\n'), 'text/plain'); });
+$('#exportJson').addEventListener('click', ()=>{ const data={exportedAt:new Date().toISOString(),user:{email:currentUser.email,displayName:currentUser.displayName,username:userDocCache?.username},entries:entries.map(e=>({title:e.title,body:e.body,type:e.type,tags:e.tags,isPublic:e.isPublic,createdAt:e.createdAt,updatedAt:e.updatedAt})),studyNotes:studyNotes.map(n=>({title:n.title,body:n.body,subject:n.subject})),sessions:studySessions.map(s=>({startedAt:s.startedAt,actualMin:s.actualMin,completed:s.completed}))}; download('আমার-খাতা.json', JSON.stringify(data,null,2), 'application/json'); });
+$('#exportTxt').addEventListener('click', ()=>{ const lines=['আমার খাতা - ব্যাকআপ','নাম: '+(currentUser.displayName||currentUser.email),'ইউজারনেম: @'+(userDocCache?.username||''),'তারিখ: '+new Date().toLocaleString('bn-BD'),'','=== লেখা ===','']; entries.forEach((e,i)=>{ lines.push('--- '+(i+1)+' ---'); lines.push('শিরোনাম: '+(e.title||'শিরোনামহীন')); lines.push('ধরন: '+(e.type||'')); lines.push('তারিখ: '+fmtDate(e.createdAt)); if(e.tags&&e.tags.length) lines.push('ট্যাগ: #'+e.tags.join(' #')); lines.push(''); lines.push(e.body||''); lines.push(''); }); lines.push('','=== পড়ার নোট ===',''); studyNotes.forEach((n,i)=>{ lines.push('--- '+(i+1)+' ---'); lines.push('শিরোনাম: '+(n.title||'')); if(n.subject) lines.push('বিষয়: '+n.subject); lines.push(''); lines.push(n.body||''); lines.push(''); }); download('আমার-খাতা.txt', lines.join('\n'), 'text/plain'); });
 function download(filename, text, mime){ const blob=new Blob([text],{type:mime+';charset=utf-8'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download=filename; document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(url); toast('ডাউনলোড'); }
 
 /* ============ ADMIN ============ */
@@ -2157,13 +2356,11 @@ async function loadAdminOverview(){
     await Promise.all(adminUsersCache.map(async u=>{ try { const es=await getDocs(collection(db,'users',u.id,'entries')); totalE += es.size; const ss=await getDocs(collection(db,'users',u.id,'study_sessions')); ss.forEach(d=>{ totalStudy += d.data().actualMin||0; }); } catch(e){} }));
     $('#statEntries').textContent = toBn(totalE);
     $('#statStudyHours').textContent = toBn(Math.round((totalStudy/60)*10)/10);
-    // top 5 by entries
     const top = [];
-    for(const u of adminUsersCache){ try { const es=await getDocs(collection(db,'users',u.id,'entries')); top.push({name:u.displayName||u.email, count:es.size, id:u.id}); } catch(e){} }
+    for(const u of adminUsersCache){ try { const es=await getDocs(collection(db,'users',u.id,'entries')); top.push({name:u.displayName||u.email, username:u.username, count:es.size, id:u.id}); } catch(e){} }
     top.sort((a,b)=>b.count-a.count);
     const maxC = top[0]?.count || 1;
-    $('#chartUsers').innerHTML = '<div class="chart-bar">'+top.slice(0,5).map(t=>'<div class="chart-row"><div class="chart-row-label">'+esc(t.name||'?')+'</div><div class="chart-row-bar"><div class="chart-row-fill" style="width:'+Math.round((t.count/maxC)*100)+'%"></div></div><div class="chart-row-val">'+toBn(t.count)+'</div></div>').join('')+'</div>';
-    // weekly new users
+    $('#chartUsers').innerHTML = '<div class="chart-bar">'+top.slice(0,5).map(t=>'<div class="chart-row"><div class="chart-row-label">'+esc(t.username?'@'+t.username:t.name||'?')+'</div><div class="chart-row-bar"><div class="chart-row-fill" style="width:'+Math.round((t.count/maxC)*100)+'%"></div></div><div class="chart-row-val">'+toBn(t.count)+'</div></div>').join('')+'</div>';
     const days = {}; const now = Date.now();
     for(let i=6;i>=0;i--){ const d=new Date(now - i*86400000); const k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); days[k]=0; }
     adminUsersCache.forEach(u=>{ if(!u.createdAt) return; const d=new Date(u.createdAt); const k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); if(k in days) days[k]++; });
@@ -2188,8 +2385,11 @@ $('#refreshUsers').addEventListener('click', loadAdminUsers);
 $('#adminSearch').addEventListener('input', ()=>renderUsers(lastUsers));
 
 function renderUsers(users){
-  const term=($('#adminSearch').value||'').trim().toLowerCase();
-  const list=users.filter(u=>!term||(u.email||'').toLowerCase().includes(term)).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+  const term=($('#adminSearch').value||'').trim().toLowerCase().replace(/^@/,'');
+  const list=users.filter(u=>{
+    if(!term) return true;
+    return (u.email||'').toLowerCase().includes(term) || (u.username||'').toLowerCase().includes(term) || (u.displayName||'').toLowerCase().includes(term);
+  }).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
   const box=$('#userList');
   if(!list.length){ box.innerHTML='<p class="empty">কিছু নেই।</p>'; return; }
   const now = Date.now();
@@ -2197,7 +2397,7 @@ function renderUsers(users){
     const c=userEntryCounts[u.id]||{total:0};
     const isSelf=u.id===uid;
     const banned = u.bannedUntil && u.bannedUntil > now;
-    return '<div class="user-row '+(u.disabled?'disabled':'')+' '+(banned?'banned':'')+'"><div><div class="user-email">'+esc(u.email||'')+(isSelf?' (তুমি)':'')+(u.disabled?' (নিষ্ক্রিয়)':'')+(banned?' (ব্যান)':'')+'</div><div class="user-meta"><span>যোগদান: <b>'+fmtDate(u.createdAt)+'</b></span><span>লেখা: <b>'+toBn(c.total)+'</b></span>'+(banned?'<span>ব্যান শেষ: <b>'+fmtDate(u.bannedUntil)+'</b></span>':'')+'</div></div><div class="user-actions"><button class="ghost view-user" data-uid="'+u.id+'">লেখা</button>'+(!isSelf?'<button class="ghost toggle-disable" data-uid="'+u.id+'">'+(u.disabled?'সক্রিয়':'নিষ্ক্রিয়')+'</button>':'')+(!isSelf?'<button class="ghost ban-user" data-uid="'+u.id+'">'+(banned?'আনব্যান':'ব্যান')+'</button>':'')+(!isSelf?'<button class="danger delete-user" data-uid="'+u.id+'">মুছো</button>':'')+'</div></div><div class="entries-panel" id="panel-'+u.id+'" style="display:none"></div>';
+    return '<div class="user-row '+(u.disabled?'disabled':'')+' '+(banned?'banned':'')+'"><div><div class="user-email">'+(u.username?'<span style="color:var(--primary)">@'+esc(u.username)+'</span> · ':'')+esc(u.displayName||'')+(isSelf?' (তুমি)':'')+(u.disabled?' (নিষ্ক্রিয়)':'')+(banned?' (ব্যান)':'')+'</div><div style="font-size:11px;color:var(--muted);margin-top:2px">'+esc(u.email||'')+'</div><div class="user-meta"><span>যোগদান: <b>'+fmtDate(u.createdAt)+'</b></span><span>লেখা: <b>'+toBn(c.total)+'</b></span>'+(banned?'<span>ব্যান শেষ: <b>'+fmtDate(u.bannedUntil)+'</b></span>':'')+'</div></div><div class="user-actions"><button class="ghost view-user" data-uid="'+u.id+'">লেখা</button>'+(!isSelf?'<button class="ghost toggle-disable" data-uid="'+u.id+'">'+(u.disabled?'সক্রিয়':'নিষ্ক্রিয়')+'</button>':'')+(!isSelf?'<button class="ghost ban-user" data-uid="'+u.id+'">'+(banned?'আনব্যান':'ব্যান')+'</button>':'')+(!isSelf?'<button class="danger delete-user" data-uid="'+u.id+'">মুছো</button>':'')+'</div></div><div class="entries-panel" id="panel-'+u.id+'" style="display:none"></div>';
   }).join('');
 }
 $('#userList').addEventListener('click', async e=>{
@@ -2209,7 +2409,7 @@ $('#userList').addEventListener('click', async e=>{
     const banned = u.bannedUntil && u.bannedUntil > Date.now();
     if(banned){ if(!confirm('আনব্যান করবে?')) return; await updateDoc(doc(db,'users',u.id),{bannedUntil:0,banReason:''}); u.bannedUntil=0; renderUsers(adminUsersCache); logActivity('unban', u.email); toast('আনব্যান ✓'); }
     else {
-      $('#genericModalContent').innerHTML='<h2 class="modal-title">ব্যান করো</h2><p style="font-size:13px;color:var(--muted);margin-bottom:10px">'+esc(u.email)+'</p><div class="field"><label>কতদিন?</label><select id="banDur"><option value="1">১ দিন</option><option value="3">৩ দিন</option><option value="7">৭ দিন</option><option value="30">৩০ দিন</option><option value="0">স্থায়ী</option></select></div><div class="field"><label>কারণ</label><input id="banReason" placeholder="নিয়ম ভঙ্গ"></div><div class="modal-actions"><button class="danger" id="doBan">ব্যান করো</button></div>';
+      $('#genericModalContent').innerHTML='<h2 class="modal-title">ব্যান করো</h2><p style="font-size:13px;color:var(--muted);margin-bottom:10px">'+(u.username?'@'+esc(u.username)+' · ':'')+esc(u.email)+'</p><div class="field"><label>কতদিন?</label><select id="banDur"><option value="1">১ দিন</option><option value="3">৩ দিন</option><option value="7">৭ দিন</option><option value="30">৩০ দিন</option><option value="0">স্থায়ী</option></select></div><div class="field"><label>কারণ</label><input id="banReason" placeholder="নিয়ম ভঙ্গ"></div><div class="modal-actions"><button class="danger" id="doBan">ব্যান করো</button></div>';
       $('#genericModal').classList.add('show');
       $('#doBan').addEventListener('click', async ()=>{
         const dur = parseInt($('#banDur').value)||0;
@@ -2225,7 +2425,7 @@ $('#userList').addEventListener('click', async e=>{
     }
     return;
   }
-  if(t.classList.contains('delete-user')){ const u=adminUsersCache.find(x=>x.id===t.dataset.uid); if(!u) return; if(!confirm('সব ডেটা মুছে যাবে?')) return; try{ for(const c of ['entries','study_sessions','study_notes','study_todos','study_cards','books','exams','class_links','notifications']){ const s=await getDocs(collection(db,'users',u.id,c)); await Promise.all(s.docs.map(d=>deleteDoc(d.ref))); } try{ await deleteDoc(doc(db,'user_profiles',u.id)); }catch(err){} await deleteDoc(doc(db,'users',u.id)); logActivity('delete_user', u.email); toast('মুছে ✓'); adminUsersCache=[]; loadAdminUsers(); }catch(err){ toast('সমস্যা'); } }
+  if(t.classList.contains('delete-user')){ const u=adminUsersCache.find(x=>x.id===t.dataset.uid); if(!u) return; if(!confirm('সব ডেটা মুছে যাবে?')) return; try{ for(const c of ['entries','study_sessions','study_notes','study_todos','study_cards','books','exams','class_links','notifications']){ const s=await getDocs(collection(db,'users',u.id,c)); await Promise.all(s.docs.map(d=>deleteDoc(d.ref))); } try{ await deleteDoc(doc(db,'user_profiles',u.id)); }catch(err){} if(u.username){ try{ await deleteDoc(doc(db,'usernames',u.username)); }catch(err){} } await deleteDoc(doc(db,'users',u.id)); logActivity('delete_user', u.email); toast('মুছে ✓'); adminUsersCache=[]; loadAdminUsers(); }catch(err){ toast('সমস্যা'); } }
 });
 async function showUserEntries(targetUid){
   const panel=document.getElementById('panel-'+targetUid);
@@ -2253,12 +2453,12 @@ async function loadAdminPosts(){
 }
 $('#adminPostSearch').addEventListener('input', ()=>{
   const term = ($('#adminPostSearch').value||'').toLowerCase();
-  renderAdminPosts(adminPostsCache.filter(p=>(p.text||'').toLowerCase().includes(term) || (p.authorName||'').toLowerCase().includes(term)));
+  renderAdminPosts(adminPostsCache.filter(p=>(p.text||'').toLowerCase().includes(term) || (p.authorName||'').toLowerCase().includes(term) || (p.authorUsername||'').toLowerCase().includes(term)));
 });
 function renderAdminPosts(list){
   const box = $('#adminPostsList');
   if(!list.length){ box.innerHTML='<p class="empty">কোনো পোস্ট নেই।</p>'; return; }
-  box.innerHTML = list.map(p=>'<div class="post-card" style="margin-bottom:9px"><div class="post-head">'+renderAvatar({displayName:p.authorName,avatar:p.authorAvatar,avatarColor:p.authorAvatarColor},36)+'<div class="post-head-info"><span style="font-weight:600;font-size:13px">'+esc(p.authorName||'?')+'</span><span class="post-time">'+fmtRelative(p.createdAt)+' · ❤️ '+toBn((p.likes||[]).length)+' · 💬 '+toBn(p.commentsCount||0)+'</span></div></div>'+(p.text?'<div class="post-text" style="font-size:13.5px;max-height:100px;overflow:hidden">'+esc(p.text.slice(0,250))+'</div>':'')+'<div style="display:flex;gap:6px;margin-top:8px"><button class="danger tiny del-post" data-id="'+p.id+'">মুছে ফেলো</button></div></div>').join('');
+  box.innerHTML = list.map(p=>'<div class="post-card" style="margin-bottom:9px"><div class="post-head">'+renderAvatar({displayName:p.authorName,avatar:p.authorAvatar,avatarColor:p.authorAvatarColor},36)+'<div class="post-head-info"><span style="font-weight:600;font-size:13px">'+esc(p.authorName||'?')+(p.authorUsername?' <span style="color:var(--primary);font-size:11px">@'+esc(p.authorUsername)+'</span>':'')+'</span><span class="post-time">'+fmtRelative(p.createdAt)+' · ❤️ '+toBn((p.likes||[]).length)+' · 💬 '+toBn(p.commentsCount||0)+'</span></div></div>'+(p.text?'<div class="post-text" style="font-size:13.5px;max-height:100px;overflow:hidden">'+esc(p.text.slice(0,250))+'</div>':'')+'<div style="display:flex;gap:6px;margin-top:8px"><button class="danger tiny del-post" data-id="'+p.id+'">মুছে ফেলো</button></div></div>').join('');
   box.querySelectorAll('.del-post').forEach(b=>b.addEventListener('click', async ()=>{
     if(!confirm('পোস্ট মুছে যাবে?')) return;
     try { await deleteDoc(doc(db,'posts',b.dataset.id)); toast('মুছে ✓'); logActivity('admin_del_post',''); adminPostsCache = adminPostsCache.filter(x=>x.id!==b.dataset.id); renderAdminPosts(adminPostsCache); } catch(e){ toast('সমস্যা'); }
@@ -2305,7 +2505,7 @@ $('#clearActivity').addEventListener('click', async ()=>{ if(!confirm('সব �
 function renderActivity(list){
   const box = $('#activityList');
   if(!list.length){ box.innerHTML = emptyState('&#128220;','কোনো অ্যাক্টিভিটি নেই',''); return; }
-  box.innerHTML = list.map(a=>'<div class="activity-item"><div><span class="activity-who">'+esc(a.userName||'?')+'</span> <span class="activity-type">'+esc(a.type)+'</span>'+(a.detail?' <span style="color:var(--muted);font-size:12px">'+esc(String(a.detail).slice(0,80))+'</span>':'')+'</div><div class="activity-time">'+fmtRelative(a.at)+'</div></div>').join('');
+  box.innerHTML = list.map(a=>'<div class="activity-item"><div><span class="activity-who">'+esc(a.userUsername?'@'+a.userUsername:a.userName||'?')+'</span> <span class="activity-type">'+esc(a.type)+'</span>'+(a.detail?' <span style="color:var(--muted);font-size:12px">'+esc(String(a.detail).slice(0,80))+'</span>':'')+'</div><div class="activity-time">'+fmtRelative(a.at)+'</div></div>').join('');
 }
 
 async function loadAdminAnnouncements(){
