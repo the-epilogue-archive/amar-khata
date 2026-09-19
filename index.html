@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2f6f4e">
 <title>আমার খাতা</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,42 +13,34 @@
   --bg:#e8dcc0; --paper:#fdfaf1; --paper2:#f8f3e6; --paper3:#fffdf6;
   --ink:#2f2a24; --ink2:#5a5247; --muted:#8b8172; --muted2:#a89e8b;
   --line:#e3d9c2; --line2:#ddd0b4; --accent:#2f6f4e; --accent2:#377f5a;
-  --gold:#c9a24a; --red:#a8563f; --purple:#5b3d8a; --blue:#3d6fa8;
-  --green:#4a9a70; --leaf:#6ab04c;
+  --gold:#c9a24a; --red:#a8563f; --purple:#5b3d8a; --blue:#3d6fa8; --leaf:#6ab04c;
 }
 body.dark{
   --bg:#14110e; --paper:#1e1a16; --paper2:#252019; --paper3:#2a241d;
   --ink:#e8dcc0; --ink2:#c5b8a0; --muted:#8f8471; --muted2:#6e6557;
   --line:#3a3227; --line2:#443b2d; --accent:#4a9a70; --accent2:#5cb884;
   --gold:#d4af52; --red:#d4795e; --purple:#8b6bc4; --blue:#6b9bc8;
-  --green:#4a9a70; --leaf:#6ab04c;
+}
+body.sepia{
+  --bg:#f0e4c8; --paper:#faf3e0; --paper2:#f0e6cc; --paper3:#fffaf0;
+  --ink:#3d2e1e; --ink2:#5a4a38; --muted:#8b7a64; --muted2:#a89578;
+  --line:#e0d2b0; --line2:#d4c4a0; --accent:#8b5a2b; --accent2:#a06a35;
+  --gold:#c9982a; --red:#a8563f; --purple:#6b4a8a; --blue:#4a6fa8;
 }
 *{box-sizing:border-box}
-body{
-  margin:0; min-height:100vh;
-  font-family:'Hind Siliguri',system-ui,sans-serif;
-  color:var(--ink); background:var(--bg);
-  padding:16px 12px 76px;
-  transition:background .25s, color .25s;
-}
-button{
-  font-family:'Hind Siliguri',sans-serif; font-size:13.5px;
-  border:1.5px solid var(--line2); background:var(--paper3); color:var(--ink);
-  padding:7px 13px; cursor:pointer; transition:.15s;
-  border-radius:9px 3px 10px 4px / 4px 10px 3px 9px;
-  box-shadow:1px 2px 0 rgba(120,100,60,.2);
-}
-button:hover{background:var(--paper2); transform:translateY(-1px)}
-button:active{transform:translateY(1px); box-shadow:none}
-button:disabled{opacity:.4; cursor:not-allowed; transform:none}
-button.primary{background:var(--accent); color:#fffdf6; border-color:var(--accent2)}
+body{margin:0;min-height:100vh;font-family:'Hind Siliguri',system-ui,sans-serif;color:var(--ink);background:var(--bg);padding:16px 12px 76px;transition:background .25s,color .25s}
+button{font-family:'Hind Siliguri',sans-serif;font-size:13.5px;border:1.5px solid var(--line2);background:var(--paper3);color:var(--ink);padding:7px 13px;cursor:pointer;transition:.15s;border-radius:9px 3px 10px 4px / 4px 10px 3px 9px;box-shadow:1px 2px 0 rgba(120,100,60,.2)}
+button:hover{background:var(--paper2);transform:translateY(-1px)}
+button:active{transform:translateY(1px);box-shadow:none}
+button:disabled{opacity:.4;cursor:not-allowed;transform:none}
+button.primary{background:var(--accent);color:#fffdf6;border-color:var(--accent2)}
 button.primary:hover{background:var(--accent2)}
-button.big{font-size:15.5px; padding:11px 24px; width:100%}
-button.danger{border-color:#d8a79c; color:var(--red)}
-button.admin{background:var(--purple); color:#fffdf6; border-color:var(--purple)}
-button.ghost{background:transparent; border-color:var(--line2); color:var(--ink2)}
-button.icon{padding:6px 10px; font-size:16px}
-button.tiny{font-size:11.5px; padding:4px 10px}
+button.big{font-size:15.5px;padding:11px 24px;width:100%}
+button.danger{border-color:#d8a79c;color:var(--red)}
+button.admin{background:var(--purple);color:#fffdf6;border-color:var(--purple)}
+button.ghost{background:transparent;border-color:var(--line2);color:var(--ink2)}
+button.icon{padding:6px 10px;font-size:16px}
+button.tiny{font-size:11.5px;padding:4px 10px}
 
 #skeleton{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg);z-index:200}
 #skeleton .dot{width:12px;height:12px;border-radius:50%;background:var(--accent);display:inline-block;margin:0 3px;animation:bnc 1.2s infinite}
@@ -90,7 +83,6 @@ button.tiny{font-size:11.5px; padding:4px 10px}
 .view.active{display:block}
 .wrap{background:var(--paper);border-radius:5px 10px 8px 12px / 10px 5px 12px 8px;padding:20px 24px 22px;box-shadow:0 14px 36px rgba(0,0,0,.18);min-height:74vh}
 
-/* note book */
 .notebook{position:relative;display:grid;grid-template-columns:270px 1fr;background:var(--paper);border-radius:5px 10px 8px 12px / 10px 5px 12px 8px;box-shadow:0 14px 36px rgba(0,0,0,.18);overflow:hidden}
 .sidebar{background:var(--paper2);border-right:1px dashed var(--line2);padding:14px 10px 14px 28px;max-height:76vh;overflow-y:auto}
 .side-label{font-family:'Caveat',cursive;font-size:20px;color:var(--muted);margin:0 0 8px 2px}
@@ -141,7 +133,6 @@ body.dark .streak-chip{background:#3a2f10;color:#e8c869;border-color:#554316}
 #status{font-size:12px;color:var(--muted);flex:1;min-width:100px}
 #count{font-size:11.5px;color:var(--muted2)}
 
-/* feed */
 .feed-grid{display:grid;gap:12px}
 .feed-card{background:var(--paper3);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:4px;padding:12px 16px;cursor:pointer;transition:.15s}
 .feed-card:hover{box-shadow:0 6px 14px rgba(0,0,0,.1);transform:translateY(-2px)}
@@ -155,12 +146,10 @@ body.dark .streak-chip{background:#3a2f10;color:#e8c869;border-color:#554316}
 .tag{font-size:11px;padding:2px 8px;background:var(--paper2);border:1px solid var(--line2);border-radius:20px;color:var(--muted)}
 .feed-foot{display:flex;gap:14px;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line2);font-size:12px;color:var(--muted)}
 
-/* generic head */
 .head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px;border-bottom:2px dashed var(--line2);padding-bottom:12px}
 .head h2{font-family:'Caveat',cursive;font-size:30px;margin:0;color:var(--ink)}
 .head-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 
-/* stats grid */
 .stats-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(130px, 1fr));gap:10px;margin-bottom:18px}
 .stat-box{background:var(--paper3);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:4px;padding:11px 13px}
 .stat-box:nth-child(1){border-left-color:var(--purple)}
@@ -184,12 +173,10 @@ body.dark .streak-chip{background:#3a2f10;color:#e8c869;border-color:#554316}
 .heat-cell.l4{background:#2f6f4e}
 .export-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 
-/* sub-tabs */
 .subtabs{display:flex;gap:5px;margin-bottom:16px;padding:4px;background:var(--paper2);border-radius:10px;border:1px solid var(--line);overflow-x:auto}
 .subtabs button{flex:1;min-width:70px;border:0;box-shadow:none;background:transparent;padding:8px 10px;font-size:12.5px;color:var(--muted);border-radius:8px;white-space:nowrap}
 .subtabs button.active{background:var(--paper3);color:var(--accent);font-weight:600;box-shadow:0 1px 4px rgba(0,0,0,.08)}
 
-/* study timer */
 .duration-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(80px, 1fr));gap:7px;margin-bottom:14px}
 .duration-grid button{font-size:13.5px;padding:12px 6px;text-align:center;border-radius:8px}
 .duration-grid button.active{background:var(--blue);color:#fffdf6;border-color:var(--blue);font-weight:600}
@@ -199,7 +186,6 @@ body.dark .streak-chip{background:#3a2f10;color:#e8c869;border-color:#554316}
 .study-options input[type="number"],.study-options input[type="text"]{padding:6px 10px;border:1.5px solid var(--line2);background:var(--paper3);font-family:inherit;font-size:13px;color:var(--ink);border-radius:8px;outline:none;width:auto}
 .study-intro{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 14px;padding:10px 12px;background:var(--paper2);border-left:3px solid var(--blue);border-radius:4px}
 
-/* active session */
 .study-active{padding:22px 24px;position:relative}
 .distraction-badge{position:absolute;top:14px;right:18px;background:#ffe6e6;color:#a8563f;padding:4px 12px;border-radius:20px;font-size:12px;border:1px solid #e8a9a9}
 .timer-display{text-align:center;padding:16px 0 22px;border-bottom:2px dashed var(--line2);margin-bottom:18px}
@@ -210,69 +196,48 @@ body.dark .streak-chip{background:#3a2f10;color:#e8c869;border-color:#554316}
 .timer-bar-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--accent));width:0%;transition:width 1s linear}
 .timer-info{display:flex;justify-content:space-between;max-width:480px;margin:8px auto 0;font-size:12px;color:var(--muted)}
 
-/* forest */
-.forest-view{
-  background:linear-gradient(180deg,#c8e6c9 0%,#a5d6a7 100%);
-  border-radius:6px;padding:16px;min-height:140px;margin-bottom:16px;
-  border:1px solid #81c784;
-  display:flex;flex-wrap:wrap;gap:6px;align-content:flex-start;
-  position:relative;overflow:hidden;
-}
+.forest-view{background:linear-gradient(180deg,#c8e6c9 0%,#a5d6a7 100%);border-radius:6px;padding:16px;min-height:140px;margin-bottom:16px;border:1px solid #81c784;display:flex;flex-wrap:wrap;gap:6px;align-content:flex-start;position:relative;overflow:hidden}
 body.dark .forest-view{background:linear-gradient(180deg,#1a2f20 0%,#0f1a13 100%);border-color:#2a4534}
 .forest-view::after{content:'';position:absolute;bottom:0;left:0;right:0;height:22px;background:linear-gradient(180deg, transparent, rgba(80,50,30,.25))}
 .tree-emoji{font-size:32px;line-height:1;transition:transform .3s;filter:drop-shadow(0 2px 3px rgba(0,0,0,.15))}
-.tree-emoji:hover{transform:scale(1.2)}
 .tree-emoji.seed{font-size:20px;opacity:.7}
 .tree-emoji.sprout{font-size:24px}
 .tree-emoji.small{font-size:28px}
 .tree-emoji.tree{font-size:36px}
 .tree-emoji.ancient{font-size:44px}
 .forest-legend{font-size:12px;color:var(--ink2);margin-bottom:10px;display:flex;gap:14px;flex-wrap:wrap}
-.forest-legend span{display:inline-flex;align-items:center;gap:4px}
 
-/* weekly chart */
 .week-chart{display:grid;grid-template-columns:repeat(7, 1fr);gap:8px;align-items:end;height:160px;padding:10px 6px;background:var(--paper2);border-radius:6px;border:1px solid var(--line);margin-bottom:16px}
 .week-bar{display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;justify-content:flex-end}
 .week-bar-fill{width:100%;max-width:44px;background:linear-gradient(180deg,var(--accent2),var(--accent));border-radius:4px 4px 0 0;min-height:3px;transition:height .5s ease-out;position:relative}
 .week-bar-fill .val{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:10.5px;color:var(--ink2);white-space:nowrap}
 .week-bar-label{font-size:11px;color:var(--muted)}
 
-/* todo */
 .todo-list{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
 .todo-item{background:var(--paper3);border:1px solid var(--line);border-radius:4px;padding:9px 12px;display:flex;gap:10px;align-items:center;transition:.15s}
 .todo-item.done{opacity:.55}
 .todo-item.done .todo-text{text-decoration:line-through;color:var(--muted)}
 .todo-check{width:20px;height:20px;accent-color:var(--accent);cursor:pointer;flex-shrink:0}
 .todo-text{flex:1;font-size:13.5px;color:var(--ink);min-width:0;word-break:break-word}
-.todo-date{font-size:11px;color:var(--muted2);flex-shrink:0}
 .todo-actions{display:flex;gap:4px;flex-shrink:0}
 
-/* goal progress */
 .goal-card{background:var(--paper3);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:5px;padding:14px 16px;margin-bottom:16px}
 .goal-header{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
 .goal-title{font-family:'Caveat',cursive;font-size:22px;color:var(--ink)}
 .goal-progress{height:14px;background:var(--paper2);border-radius:8px;overflow:hidden;border:1px solid var(--line)}
-.goal-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--green));transition:width .5s;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fffdf6;font-size:11px;font-weight:600}
+.goal-fill{height:100%;background:linear-gradient(90deg,var(--accent),#6ab04c);transition:width .5s;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fffdf6;font-size:11px;font-weight:600}
 .goal-fill.warn{background:linear-gradient(90deg,var(--gold),#d4a53a)}
 .goal-meta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px}
 
-/* flashcards */
-.flashcard{
-  background:var(--paper3);border:1px solid var(--line);border-radius:8px;
-  min-height:220px;display:flex;align-items:center;justify-content:center;
-  padding:24px;text-align:center;cursor:pointer;position:relative;
-  box-shadow:0 6px 20px rgba(0,0,0,.1);margin-bottom:14px;
-  transition:.3s;user-select:none;
-}
+.flashcard{background:var(--paper3);border:1px solid var(--line);border-radius:8px;min-height:220px;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;cursor:pointer;position:relative;box-shadow:0 6px 20px rgba(0,0,0,.1);margin-bottom:14px;transition:.3s;user-select:none}
 .flashcard:hover{transform:translateY(-2px)}
 .flashcard.side-back{background:linear-gradient(135deg,var(--paper3),var(--paper2))}
 .flashcard-content{font-size:17px;line-height:1.7;color:var(--ink);font-weight:500;white-space:pre-wrap}
-.flashcard-side-label{position:absolute;top:8px;left:12px;font-size:11px;color:var(--muted2);font-family:'Caveat',cursive;font-size:15px}
+.flashcard-side-label{position:absolute;top:8px;left:12px;font-family:'Caveat',cursive;font-size:15px;color:var(--muted2)}
 .flashcard-hint{position:absolute;bottom:8px;right:12px;font-size:11px;color:var(--muted2)}
 .flashcard-controls{display:flex;gap:8px;justify-content:center;margin-bottom:14px}
 .flashcard-stats{display:flex;justify-content:center;gap:16px;font-size:12.5px;color:var(--muted);margin-bottom:14px}
 
-/* books */
 .book-item{background:var(--paper3);border:1px solid var(--line);border-left:5px solid var(--purple);border-radius:4px;padding:12px 14px;margin-bottom:10px}
 .book-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:8px;flex-wrap:wrap}
 .book-title{font-family:'Caveat',cursive;font-size:22px;color:var(--ink);margin:0}
@@ -282,7 +247,6 @@ body.dark .forest-view{background:linear-gradient(180deg,#1a2f20 0%,#0f1a13 100%
 .book-meta{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);gap:8px;flex-wrap:wrap}
 .book-actions{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
 
-/* class mode */
 .class-list{display:flex;flex-direction:column;gap:9px;margin-bottom:14px}
 .class-item{background:var(--paper3);border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:4px;padding:11px 14px;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
 .class-info{flex:1;min-width:0}
@@ -294,14 +258,13 @@ body.dark .class-platform{background:#1e2a44;color:#8fb4e8;border-color:#2d4064}
 .embed-area{margin-top:14px;border:1px dashed var(--line2);border-radius:6px;padding:10px;background:var(--paper2);min-height:320px;display:flex;flex-direction:column}
 .embed-area iframe{width:100%;flex:1;border:0;border-radius:4px;min-height:400px;background:#000}
 .embed-area .fallback{text-align:center;padding:30px 20px;color:var(--muted);font-size:13.5px;line-height:1.7}
+.embed-area .fallback button{margin-top:12px}
 
-/* study room */
 .room-code{font-family:'Caveat',cursive;font-size:34px;letter-spacing:3px;color:var(--purple);background:var(--paper3);border:2px dashed var(--purple);border-radius:6px;padding:8px 16px;display:inline-block;margin:8px 0}
-.room-member{display:flex;align-items:center;gap:8px;background:var(--paper3);border:1px solid var(--line);border-radius:20px;padding:5px 12px;font-size:13px;margin:4px 4px 4px 0;display:inline-flex}
+.room-member{display:inline-flex;align-items:center;gap:8px;background:var(--paper3);border:1px solid var(--line);border-radius:20px;padding:5px 12px;font-size:13px;margin:4px 4px 4px 0}
 .room-member .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:blink 1.5s infinite}
 @keyframes blink{50%{opacity:.35}}
 
-/* exam countdown */
 .exam-strip{display:flex;gap:10px;overflow-x:auto;padding:4px 0 10px;margin-bottom:14px}
 .exam-chip{background:linear-gradient(135deg,#fff4d6,#ffe8a8);border:1px solid var(--gold);border-radius:6px;padding:9px 14px;min-width:140px;flex-shrink:0;position:relative}
 body.dark .exam-chip{background:linear-gradient(135deg,#3a2f10,#2a2008)}
@@ -311,7 +274,6 @@ body.dark .exam-chip{background:linear-gradient(135deg,#3a2f10,#2a2008)}
 .exam-date{font-size:10.5px;color:var(--muted2);margin-top:2px}
 .exam-del{position:absolute;top:4px;right:6px;background:transparent;border:0;box-shadow:none;color:var(--red);font-size:14px;padding:0 4px;cursor:pointer}
 
-/* admin */
 .admin-search{width:100%;padding:9px 12px;margin-bottom:12px;border:1.5px solid var(--line2);background:var(--paper3);font-family:inherit;font-size:13px;border-radius:8px 3px 9px 4px / 4px 9px 3px 8px;outline:none;color:var(--ink)}
 .user-list{display:flex;flex-direction:column;gap:7px}
 .user-row{background:var(--paper3);border:1px solid var(--line);border-left:4px solid var(--purple);border-radius:4px;padding:10px 13px;display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}
@@ -327,7 +289,6 @@ body.dark .exam-chip{background:linear-gradient(135deg,#3a2f10,#2a2008)}
 .entry-mini-title{font-family:'Caveat',cursive;font-size:16px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .entry-mini-meta{font-size:10.5px;color:var(--muted);margin-top:2px}
 
-/* modal */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:100;display:none;align-items:center;justify-content:center;padding:14px}
 .modal-overlay.show{display:flex}
 .modal{background:var(--paper);max-width:600px;width:100%;max-height:88vh;overflow-y:auto;padding:22px 24px;border-radius:6px 16px 8px 18px / 16px 6px 18px 8px;box-shadow:0 25px 60px rgba(0,0,0,.5);border:1px solid var(--line)}
@@ -337,7 +298,6 @@ body.dark .exam-chip{background:linear-gradient(135deg,#3a2f10,#2a2008)}
 .modal-actions{display:flex;gap:10px;align-items:center;border-top:1px dashed var(--line2);padding-top:12px;margin-top:12px;flex-wrap:wrap}
 .like-btn{display:inline-flex;align-items:center;gap:6px}
 .like-btn.liked{background:#ffe6e6;border-color:#e8a9a9;color:#a8563f}
-body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
 .comments-section{margin-top:14px;border-top:1px dashed var(--line2);padding-top:12px}
 .comments-section h4{font-family:'Caveat',cursive;font-size:19px;margin:0 0 9px;color:var(--ink)}
 .comment{background:var(--paper3);border:1px solid var(--line);border-radius:4px;padding:7px 11px;margin-bottom:7px}
@@ -356,6 +316,30 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
 .warn-card h2{font-family:'Caveat',cursive;font-size:34px;color:var(--red);margin:0 0 10px}
 .warn-card p{font-size:14px;color:var(--ink2);line-height:1.7;margin:0 0 14px}
 .warn-count{font-family:'Caveat',cursive;font-size:44px;color:var(--red);font-weight:700}
+
+/* Command Palette */
+.cmd-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:350;display:none;align-items:flex-start;justify-content:center;padding:80px 20px}
+.cmd-overlay.show{display:flex}
+.cmd-box{background:var(--paper);max-width:500px;width:100%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.45);overflow:hidden;border:1px solid var(--line)}
+.cmd-input{width:100%;padding:14px 18px;border:0;font-size:16px;font-family:inherit;background:var(--paper3);color:var(--ink);outline:none;border-bottom:1px solid var(--line)}
+.cmd-list{max-height:340px;overflow-y:auto}
+.cmd-item{padding:11px 18px;cursor:pointer;font-size:14px;color:var(--ink2);display:flex;gap:10px;align-items:center}
+.cmd-item:hover,.cmd-item.active{background:var(--paper2);color:var(--accent)}
+.cmd-item .icon{font-size:18px}
+
+/* Tour */
+.tour-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:400;display:none;align-items:center;justify-content:center;padding:20px}
+.tour-overlay.show{display:flex}
+.tour-box{background:var(--paper);max-width:420px;padding:26px 24px;border-radius:10px;text-align:center;box-shadow:0 25px 60px rgba(0,0,0,.5);border:1px solid var(--line)}
+.tour-box h3{font-family:'Caveat',cursive;font-size:30px;margin:0 0 12px;color:var(--accent)}
+.tour-box p{font-size:14.5px;line-height:1.7;color:var(--ink2);margin:0 0 18px}
+.tour-step{font-size:11.5px;color:var(--muted);margin-bottom:10px}
+
+/* Empty state */
+.empty-state{text-align:center;padding:28px 12px}
+.empty-state .icon{font-size:44px;margin-bottom:10px;line-height:1}
+.empty-state .title{font-family:'Caveat',cursive;font-size:24px;color:var(--ink);margin-bottom:6px}
+.empty-state .tip{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.6;max-width:300px;margin-left:auto;margin-right:auto}
 
 .bottom-nav{display:none}
 
@@ -385,12 +369,11 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
 
 <div id="skeleton"><div style="text-align:center"><div><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><p style="margin-top:14px;font-family:'Caveat',cursive;font-size:22px;color:var(--muted)">আমার খাতা</p></div></div>
 
-<!-- AUTH -->
 <div class="auth-wrap" id="authScreen" style="display:none">
   <div class="auth-card">
     <div class="auth-emoji">&#128211;</div>
     <h2>আমার খাতা</h2>
-    <p class="auth-sub">লেখা · পড়া · ক্লাস — সব এক জায়গায়</p>
+    <p class="auth-sub">লেখা · পড়া · সব এক জায়গায়</p>
     <div class="auth-tabs">
       <button id="tabLogin" class="active">লগইন</button>
       <button id="tabSignup">নতুন অ্যাকাউন্ট</button>
@@ -400,20 +383,20 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
       Google দিয়ে চালিয়ে যাও
     </button>
     <div class="divider">অথবা</div>
-    <div class="field"><label>ইমেইল</label><input id="email" type="email" placeholder="tumi@example.com"></div>
-    <div class="field"><label>পাসওয়ার্ড</label><input id="password" type="password" placeholder="কমপক্ষে ৬ অক্ষর"></div>
-    <div class="field" id="confirmWrap" style="display:none"><label>পাসওয়ার্ড আবার লেখো</label><input id="password2" type="password" placeholder="একই পাসওয়ার্ড"></div>
+    <div class="field"><label>ইমেইল</label><input id="email" type="email" placeholder="tumi@example.com" autocomplete="email"></div>
+    <div class="field"><label>পাসওয়ার্ড</label><input id="password" type="password" placeholder="কমপক্ষে ৬ অক্ষর" autocomplete="current-password"></div>
+    <div class="field" id="confirmWrap" style="display:none"><label>পাসওয়ার্ড আবার লেখো</label><input id="password2" type="password" placeholder="একই পাসওয়ার্ড" autocomplete="new-password"></div>
     <button class="primary big" id="submitBtn">লগইন করো</button>
     <p class="auth-msg" id="authMsg"></p>
   </div>
 </div>
 
-<!-- APP -->
 <div id="appView" style="display:none">
   <header class="topbar">
     <div class="brand"><div><h1>আমার খাতা</h1><small id="userLabel"></small></div></div>
     <div class="top-actions">
-      <button id="darkToggle" class="icon" title="ডার্ক মোড">&#9788;</button>
+      <button id="darkToggle" class="icon" title="থিম বদলাও">&#9788;</button>
+      <button id="cmdBtn" class="icon" title="সার্চ (Ctrl+K)">&#128269;</button>
       <button id="adminBtn" class="admin" style="display:none">অ্যাডমিন</button>
       <button id="logoutBtn" class="danger">লগআউট</button>
     </div>
@@ -426,7 +409,6 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
     <button data-tab="dashboard">&#128202; ড্যাশবোর্ড</button>
   </nav>
 
-  <!-- WRITE -->
   <div class="view active" id="viewWrite">
     <main class="notebook">
       <aside class="sidebar">
@@ -470,7 +452,6 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
     </main>
   </div>
 
-  <!-- STUDY -->
   <div class="view" id="viewStudy">
     <div class="wrap" id="studySetupView">
       <div class="head">
@@ -488,9 +469,8 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
         <button data-stab="stats">&#128202; স্ট্যাটস</button>
       </div>
 
-      <!-- TIMER TAB -->
       <div class="study-panel" id="stabTimer">
-        <div class="study-intro">টাইমার চালু করলে সেশন শেষ না হওয়া পর্যন্ত অন্য ট্যাবে যেতে পারবে না। শুধু দ্রুত নোট আর ক্লাস মোড চলবে।</div>
+        <div class="study-intro">টাইমার চালু করলে সেশন শেষ না হওয়া পর্যন্ত অন্য ট্যাবে যেতে পারবে না। শুধু দ্রুত নোট নিতে পারবে।</div>
         <div class="duration-grid" id="durationGrid">
           <button data-min="15">১৫ মি</button>
           <button data-min="25" class="active">২৫ মি</button>
@@ -500,22 +480,13 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
           <button data-min="custom">কাস্টম</button>
         </div>
         <div class="study-options">
-          <label><input type="checkbox" id="ambientToggle"> পটভূমির শব্দ</label>
-          <label><input type="checkbox" id="strictMode" checked> কঠোর মোড</label>
-          <label>
-            <select id="soundSelect" style="padding:6px 10px;border:1.5px solid var(--line2);background:var(--paper3);font-family:inherit;font-size:13px;color:var(--ink);border-radius:8px;outline:none">
-              <option value="rain">বৃষ্টি</option>
-              <option value="fan">ফ্যান</option>
-              <option value="lofi">Lo-fi</option>
-              <option value="ocean">সমুদ্র</option>
-            </select>
-          </label>
+          <label><input type="checkbox" id="strictMode" checked> কঠোর মোড (পেনাল্টি সহ)</label>
         </div>
         <div class="study-options" id="customMinWrap" style="display:none">
           <label>কাস্টম মিনিট: <input type="number" id="customMin" min="5" max="180" value="30" style="width:70px"></label>
         </div>
         <div class="study-options">
-          <label><input type="checkbox" id="classModeToggle"> ক্লাস মোড (টাইমারের সাথে ক্লাস)</label>
+          <label><input type="checkbox" id="classModeToggle"> ক্লাস মোড</label>
           <select id="classSelect" style="padding:6px 10px;border:1.5px solid var(--line2);background:var(--paper3);font-family:inherit;font-size:13px;color:var(--ink);border-radius:8px;outline:none;display:none">
             <option value="">ক্লাস সিলেক্ট করো</option>
           </select>
@@ -523,7 +494,6 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
         <button class="primary big" id="startStudyBtn">পড়া শুরু করো</button>
       </div>
 
-      <!-- TODOS -->
       <div class="study-panel" id="stabTodos" style="display:none">
         <div class="goal-card" id="goalCard">
           <div class="goal-header">
@@ -540,7 +510,6 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
         <div class="todo-list" id="todoList"></div>
       </div>
 
-      <!-- CARDS -->
       <div class="study-panel" id="stabCards" style="display:none">
         <div class="head" style="padding-bottom:8px">
           <h2 style="font-size:24px">&#127183; ফ্ল্যাশকার্ড</h2>
@@ -552,7 +521,6 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
         <div id="cardsView"></div>
       </div>
 
-      <!-- BOOKS -->
       <div class="study-panel" id="stabBooks" style="display:none">
         <div class="head" style="padding-bottom:8px">
           <h2 style="font-size:24px">&#128214; বই ট্র্যাকার</h2>
@@ -561,9 +529,8 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
         <div id="booksList"></div>
       </div>
 
-      <!-- CLASS -->
       <div class="study-panel" id="stabClass" style="display:none">
-        <div class="study-intro">তোমার অনলাইন ক্লাসের লিংক সেভ করো। Jitsi/নিজের সাইট হলে এখানেই খুলবে, Zoom/Meet হলে টাইমারের সাথে নতুন ট্যাবে যাবে।</div>
+        <div class="study-intro">তোমার অনলাইন ক্লাসের লিংক সেভ করো। <b>Jitsi/YouTube</b> এমবেড হবে। <b>Physics Hunters / Meet / Zoom</b> নতুন ট্যাবে খুলবে (টাইমার চলবে, সেশন locked থাকবে)।</div>
         <div class="head" style="padding-bottom:8px">
           <h2 style="font-size:24px">&#127909; ক্লাস লিংক</h2>
           <button class="primary tiny" id="addClassBtn">+ ক্লাস যোগ</button>
@@ -578,9 +545,8 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
         </div>
       </div>
 
-      <!-- STUDY ROOM -->
       <div class="study-panel" id="stabRoom" style="display:none">
-        <div class="study-intro">একটা রুম বানাও, বন্ধুকে কোড দাও। দুজনে একসাথে পড়তে পারবে এবং একে অন্যের অবস্থা দেখতে পারবে।</div>
+        <div class="study-intro">একটা রুম বানাও, বন্ধুকে কোড দাও। দুজনে একসাথে পড়তে পারবে।</div>
         <div id="roomNotJoined">
           <button class="primary big" id="createRoomBtn" style="margin-bottom:10px">নতুন রুম বানাও</button>
           <div class="field"><label>রুম কোড দিয়ে জয়েন করো</label>
@@ -594,7 +560,7 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
           <div style="text-align:center;padding:10px 0">
             <p style="font-size:13.5px;color:var(--muted);margin:0 0 4px">তোমার রুম কোড</p>
             <div class="room-code" id="roomCodeDisplay">------</div>
-            <button class="tiny ghost" id="copyRoomCode">কপি করো</button>
+            <br><button class="tiny ghost" id="copyRoomCode">কপি করো</button>
           </div>
           <div style="margin:14px 0">
             <p style="font-size:12.5px;color:var(--muted);margin:0 0 6px">এখন যারা আছে:</p>
@@ -604,7 +570,6 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
         </div>
       </div>
 
-      <!-- NOTES -->
       <div class="study-panel" id="stabNotes" style="display:none">
         <div class="head" style="padding-bottom:8px">
           <h2 style="font-size:24px">&#128221; পড়ার নোট</h2>
@@ -616,7 +581,6 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
         <div id="studyNotesList"></div>
       </div>
 
-      <!-- STATS -->
       <div class="study-panel" id="stabStats" style="display:none">
         <div class="stats-grid">
           <div class="stat-box"><div class="stat-label">মোট পড়া</div><div class="stat-value" id="dsStudyHours">0</div><div style="font-size:10.5px;color:var(--muted)">ঘণ্টা</div></div>
@@ -633,7 +597,6 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
       </div>
     </div>
 
-    <!-- ACTIVE SESSION -->
     <div class="wrap study-active" id="studyActiveView" style="display:none">
       <div class="distraction-badge" id="distractionBadge" style="display:none">বাধা: ০</div>
       <div class="timer-display">
@@ -655,7 +618,6 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
     </div>
   </div>
 
-  <!-- FEED -->
   <div class="view" id="viewFeed">
     <div class="wrap">
       <div class="head">
@@ -667,11 +629,10 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
         </div>
       </div>
       <div class="feed-grid" id="feedGrid"><p class="empty">লোড হচ্ছে...</p></div>
-      <button class="load-more ghost" id="loadMoreBtn" style="display:none;margin:16px auto 0;display:block;padding:9px 24px">আরো দেখো</button>
+      <button class="ghost" id="loadMoreBtn" style="display:none;margin:16px auto 0;padding:9px 24px">আরো দেখো</button>
     </div>
   </div>
 
-  <!-- DASHBOARD -->
   <div class="view" id="viewDashboard">
     <div class="wrap">
       <div class="head">
@@ -719,7 +680,6 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
     </div>
   </div>
 
-  <!-- ADMIN -->
   <div class="view" id="viewAdmin">
     <div class="wrap">
       <div class="head">
@@ -750,6 +710,17 @@ body.dark .like-btn.liked{background:#3a1a1a;border-color:#5c2f2f;color:#e08a8a}
 <div class="warn-overlay" id="warnOverlay"><div class="warn-card"><h2>মন দিয়ে পড়ো!</h2><p>তুমি পড়া ছেড়ে অন্য জায়গায় চলে গেলে। এটা তোমার মনোযোগ ভাঙে।</p><div class="warn-count" id="warnCount">1</div><p style="font-size:12px;color:var(--muted)">বারবার গেলে সেশন বাতিল হবে।</p><button class="primary big" id="warnBackBtn" style="margin-top:10px">ফিরে এসো</button></div></div>
 <div class="modal-overlay" id="breakModal"><div class="modal"><div id="breakModalContent"></div></div></div>
 
+<div class="cmd-overlay" id="cmdOverlay">
+  <div class="cmd-box">
+    <input class="cmd-input" id="cmdInput" placeholder="কী খুঁজছো? (Ctrl+K)" autocomplete="off">
+    <div class="cmd-list" id="cmdList"></div>
+  </div>
+</div>
+
+<div class="tour-overlay" id="tourOverlay">
+  <div class="tour-box" id="tourBox"></div>
+</div>
+
 <div id="toast"></div>
 
 <script type="module">
@@ -779,11 +750,9 @@ const PROMPTS = [
   "শহরের কোলাহল নিয়ে ৫ লাইনের কবিতা লেখো।",
   "একটা স্বপ্নের বর্ণনা দাও — যা এখনো পূরণ হয়নি।",
   "তোমার প্রিয় বইটা নিয়ে লিখো।",
-  "একা লাগলে তুমি কী করো? লিখো।",
   "প্রকৃতির একটা দৃশ্য এঁকে ফেলো শব্দে।",
   "তোমার মায়ের হাতের রান্নার গন্ধ নিয়ে লিখো।",
   "রাতের আকাশ দেখে তোমার কী মনে হয়?",
-  "যদি সময় থামিয়ে দেওয়ার ক্ষমতা থাকত, কোন মুহূর্ত বেছে নিতে?",
   "তোমার প্রিয় গান নিয়ে কিছু লেখো।",
   "একটা ছোট কবিতা লেখো — যার শিরোনাম হবে 'অপেক্ষা'।",
   "তোমার স্বপ্নের ঘর কেমন হবে? বর্ণনা দাও।",
@@ -791,7 +760,6 @@ const PROMPTS = [
   "তোমার ভয় নিয়ে লিখো — আর সেটা জয় করার উপায়।",
   "একটা বন্ধুত্বের গল্প লেখো।",
   "নদী নিয়ে কবিতা লেখো।",
-  "তোমার প্রিয় খাবার নিয়ে লেখো।",
   "শীতের সকাল কেমন লাগে? বর্ণনা দাও।",
   "ভবিষ্যতের নিজের কাছে একটা চিঠি লেখো।"
 ];
@@ -818,8 +786,16 @@ const STUDY_BADGES = [
   { id:'sf6', icon:'&#127775;', name:'স্টার', desc:'৩০ দিন Streak', check:s=>s.streak>=30 },
   { id:'sf7', icon:'&#9749;', name:'ম্যারাথন', desc:'এক সেশনে ৯০ মি', check:s=>s.longest>=90 },
   { id:'sf8', icon:'&#128170;', name:'অদম্য', desc:'৫০ সেশন', check:s=>s.sessions>=50 },
-  { id:'sf9', icon:'&#11088;', name:'পারফেক্ট', desc:'১০টি বাধাহীন সেশন', check:s=>s.perfect>=10 },
+  { id:'sf9', icon:'&#11088;', name:'পারফেক্ট', desc:'১০ বাধাহীন সেশন', check:s=>s.perfect>=10 },
   { id:'sf10', icon:'&#128200;', name:'পরিশ্রমী', desc:'একদিনে ৪ ঘণ্টা', check:s=>s.bestDay>=240 }
+];
+
+const TOUR_STEPS = [
+  { title:'স্বাগতম! 👋', text:'এখানে তুমি কবিতা, গল্প, পড়ার নোট — সব লিখতে ও সেভ করতে পারবে।' },
+  { title:'লেখা ✍️', text:'লেখা ট্যাবে গিয়ে "নতুন পাতা" চাপলে নতুন কবিতা বা গল্প লিখতে পারবে।' },
+  { title:'পড়া 📚', text:'পড়া ট্যাবে টাইমার, To-Do, ফ্ল্যাশকার্ড, বই ট্র্যাকার — সব আছে।' },
+  { title:'ড্যাশবোর্ড 📊', text:'তোমার সব অগ্রগতি, ব্যাজ, বন — সব এক জায়গায় দেখতে পারবে।' },
+  { title:'Ctrl+K 🔍', text:'যেকোনো সময় Ctrl+K চেপে যেকোনো কিছু দ্রুত খুঁজে পাবে।' }
 ];
 
 const $ = s => document.querySelector(s);
@@ -834,12 +810,16 @@ const todayKey = () => { const d=new Date(); return d.getFullYear()+'-'+String(d
 const daysBetween = (a,b) => Math.ceil((b-a)/(1000*60*60*24));
 
 function toast(msg) { const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._timer); t._timer=setTimeout(()=>t.classList.remove('show'),2200); }
+function emptyState(icon, title, tip, btnText, btnId){
+  return '<div class="empty-state"><div class="icon">'+icon+'</div><div class="title">'+title+'</div>'+
+    (tip?'<div class="tip">'+tip+'</div>':'')+
+    (btnText?'<button class="primary" style="margin-top:12px" id="'+btnId+'">'+btnText+'</button>':'')+'</div>';
+}
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-/* ===== STATE ===== */
 let uid=null, currentUser=null, isAdmin=false;
 let entries=[], currentId=null, currentType='কবিতা';
 let unsubEntries=null, saveTimer=null, isDirty=false;
@@ -848,44 +828,59 @@ let feedLoaded=false, feedEntries=[], feedLastDoc=null, feedFilter='all', feedHa
 let lastUsers=[], userEntryCounts={};
 const PAGE_SIZE=10;
 
-/* study state */
 let studySessions=[], studyNotes=[], studyTodos=[], studyCards=[], books=[], exams=[], classLinks=[];
 let studyDuration=25, studyTimer=null, studyActive=false;
 let studyStartTime=0, studyEndTime=0, studyPaused=false, studyPausedAt=0, studyTotalPausedTime=0;
-let studyDistractions=0, studyStrict=false, studyAmbient=null;
+let studyDistractions=0, studyStrict=false;
 let currentClassUrl=null, currentClassName=null;
 let roomUnsub=null, currentRoomCode=null;
 let loadedTabs={};
 let cardIdx=0, cardFlipped=false, cardCorrect=0, cardWrong=0;
+let tourIdx = 0;
 
-/* ===== THEME ===== */
-(function(){ if(localStorage.getItem('theme')==='dark') document.body.classList.add('dark'); updDark(); })();
-$('#darkToggle').addEventListener('click', ()=>{ document.body.classList.toggle('dark'); localStorage.setItem('theme',document.body.classList.contains('dark')?'dark':'light'); updDark(); });
-function updDark(){ $('#darkToggle').innerHTML = document.body.classList.contains('dark')?'&#9790;':'&#9788;'; }
+/* ============ THEME ============ */
+(function(){ const s = localStorage.getItem('theme')||'light'; if(s==='dark') document.body.classList.add('dark'); else if(s==='sepia') document.body.classList.add('sepia'); updDark(); })();
+$('#darkToggle').addEventListener('click', ()=>{
+  const b = document.body;
+  const cur = b.classList.contains('dark') ? 'dark' : b.classList.contains('sepia') ? 'sepia' : 'light';
+  let next = cur==='light' ? 'sepia' : cur==='sepia' ? 'dark' : 'light';
+  b.classList.remove('dark','sepia');
+  if(next==='dark') b.classList.add('dark');
+  if(next==='sepia') b.classList.add('sepia');
+  localStorage.setItem('theme', next); updDark();
+  toast(next==='dark'?'🌙 ডার্ক':next==='sepia'?'🌅 সেপিয়া':'☀️ লাইট');
+});
+function updDark(){
+  const b = document.body;
+  $('#darkToggle').innerHTML = b.classList.contains('dark') ? '&#9790;' : b.classList.contains('sepia') ? '&#127749;' : '&#9788;';
+}
 
-/* ===== AUTH ===== */
+/* ============ AUTH ============ */
 $('#tabLogin').addEventListener('click', ()=>setAuthMode('login'));
 $('#tabSignup').addEventListener('click', ()=>setAuthMode('signup'));
 function setAuthMode(m){ authMode=m; const l=m==='login'; $('#tabLogin').classList.toggle('active',l); $('#tabSignup').classList.toggle('active',!l); $('#confirmWrap').style.display=l?'none':'block'; $('#submitBtn').textContent=l?'লগইন করো':'অ্যাকাউন্ট খোলো'; setAuthMsg(''); }
 function setAuthMsg(m,ok){ const el=$('#authMsg'); el.textContent=m||''; el.classList.toggle('ok',!!ok); }
 
-$('#googleBtn').addEventListener('click', async ()=>{ setAuthMsg('Google খোলা হচ্ছে...'); try{ await signInWithPopup(auth, new GoogleAuthProvider()); } catch(e){ const map={'auth/popup-closed-by-user':'বন্ধ করা হয়েছে।','auth/unauthorized-domain':'ডোমেইন অনুমোদিত নয়।','auth/operation-not-allowed':'Google login চালু করা হয়নি।'}; setAuthMsg(map[e.code]||('সমস্যা: '+e.message)); } });
-
+$('#googleBtn').addEventListener('click', async ()=>{
+  setAuthMsg('Google খোলা হচ্ছে...');
+  try{ await signInWithPopup(auth, new GoogleAuthProvider()); }
+  catch(e){ const map={'auth/popup-closed-by-user':'বন্ধ করা হয়েছে।','auth/unauthorized-domain':'ডোমেইন অনুমোদিত নয়।','auth/operation-not-allowed':'Google login চালু করা হয়নি।'}; setAuthMsg(map[e.code]||('সমস্যা: '+e.message)); }
+});
 $('#submitBtn').addEventListener('click', submitAuth);
 $('#password').addEventListener('keydown', e=>{ if(e.key==='Enter') submitAuth(); });
 $('#password2').addEventListener('keydown', e=>{ if(e.key==='Enter') submitAuth(); });
 
-async function submitAuth() {
+async function submitAuth(){
   const email=$('#email').value.trim(), pass=$('#password').value;
   if(!email||!pass) return setAuthMsg('ইমেইল ও পাসওয়ার্ড দুটোই দাও।');
   if(pass.length<6) return setAuthMsg('পাসওয়ার্ড কমপক্ষে ৬ অক্ষর।');
   if(authMode==='signup' && pass!==$('#password2').value) return setAuthMsg('পাসওয়ার্ড মিলছে না।');
   setAuthMsg(authMode==='login'?'লগইন হচ্ছে...':'অ্যাকাউন্ট তৈরি হচ্ছে...');
-  try {
+  try{
     if(authMode==='login') await signInWithEmailAndPassword(auth,email,pass);
     else { const c=await createUserWithEmailAndPassword(auth,email,pass); await updateProfile(c.user,{displayName:email.split('@')[0]}); }
-  } catch(e) {
-    const map={ 'auth/invalid-email':'ইমেইলটা ঠিক নেই।','auth/user-not-found':'অ্যাকাউন্ট নেই।','auth/wrong-password':'পাসওয়ার্ড ভুল।','auth/invalid-credential':'ভুল ইমেইল/পাসওয়ার্ড।','auth/email-already-in-use':'অ্যাকাউন্ট আছে।','auth/weak-password':'দুর্বল পাসওয়ার্ড।','auth/too-many-requests':'অনেকবার চেষ্টা।','auth/network-request-failed':'নেটওয়ার্ক সমস্যা।','auth/operation-not-allowed':'Email/Password চালু করো।' };
+  } catch(e){
+    const map={'auth/invalid-email':'ইমেইলটা ঠিক নেই।','auth/user-not-found':'অ্যাকাউন্ট নেই।','auth/wrong-password':'পাসওয়ার্ড ভুল।','auth/invalid-credential':'ভুল ইমেইল/পাসওয়ার্ড।','auth/email-already-in-use':'অ্যাকাউন্ট আছে।','auth/weak-password':'দুর্বল পাসওয়ার্ড।','auth/too-many-requests':'অনেকবার চেষ্টা।','auth/network-request-failed':'নেটওয়ার্ক সমস্যা।','auth/operation-not-allowed':'Email/Password চালু করো।'};
     setAuthMsg(map[e.code]||('সমস্যা: '+e.message));
   }
 }
@@ -893,18 +888,19 @@ async function submitAuth() {
 $('#logoutBtn').addEventListener('click', async ()=>{
   if(studyActive) return toast('আগে সেশন শেষ করো');
   if(!confirm('লগআউট করলে পরের বার আবার লগইন করলেই সব ফিরে পাবে।')) return;
-  ['unsubEntries'].forEach(k=>{ if(window[k]){ try{window[k]();}catch(e){} } });
-  if(roomUnsub){ try{roomUnsub();}catch(e){} }
+  if(unsubEntries){ unsubEntries(); unsubEntries=null; }
+  if(roomUnsub){ try{roomUnsub();}catch(e){} roomUnsub=null; }
+  ['Sessions','Notes','Todos','Cards','Books','Exams','ClassLinks'].forEach(k=>{ if(window['unsub'+k]){ try{window['unsub'+k]();}catch(e){} window['unsub'+k]=null; } });
+  loadedTabs={};
   await signOut(auth);
 });
 
 onAuthStateChanged(auth, async user=>{
   $('#skeleton').style.display='none';
-  if(!user) {
+  if(!user){
     uid=null; currentUser=null; isAdmin=false; userDocCache=null;
     if(unsubEntries){unsubEntries();unsubEntries=null;}
-    if(roomUnsub){roomUnsub();roomUnsub=null;}
-    ['studySessions','studyNotes','studyTodos','studyCards','books','exams','classLinks'].forEach(k=>{ if(window['unsub_'+k]){ try{window['unsub_'+k]();}catch(e){} window['unsub_'+k]=null; } });
+    if(roomUnsub){ try{roomUnsub();}catch(e){} roomUnsub=null; }
     loadedTabs={};
     $('#appView').style.display='none';
     $('#authScreen').style.display='flex';
@@ -917,23 +913,22 @@ onAuthStateChanged(auth, async user=>{
   $('#appView').style.display='block';
   $('#userLabel').textContent = (user.displayName||user.email)+(isAdmin?' · অ্যাডমিন':'');
   $('#adminBtn').style.display = isAdmin?'inline-block':'none';
-
   showRandomPrompt();
   ensureUserDoc(user).catch(e=>console.error(e));
   subscribeEntries();
-  // Lazy: study sessions loaded when study tab opens
   switchTab('write');
   newEntry();
   restoreStudySession();
+  if(!localStorage.getItem('tourDone')) setTimeout(showTour, 800);
 });
 
-async function ensureUserDoc(user) {
+async function ensureUserDoc(user){
   const ref = doc(db,'users',user.uid);
   const snap = await getDoc(ref);
   const now = Date.now();
-  if(!snap.exists()) {
-    const d = { uid:user.uid, email:user.email, displayName:user.displayName||user.email.split('@')[0], createdAt:now, lastLogin:now, disabled:false, streak:{current:0,longest:0,lastDate:''}, studyStreak:{current:0,longest:0,lastDate:''}, dailyGoal:120 };
-    await setDoc(ref,d); userDocCache = d;
+  if(!snap.exists()){
+    const d={uid:user.uid,email:user.email,displayName:user.displayName||user.email.split('@')[0],createdAt:now,lastLogin:now,disabled:false,streak:{current:0,longest:0,lastDate:''},studyStreak:{current:0,longest:0,lastDate:''},dailyGoal:120};
+    await setDoc(ref,d); userDocCache=d;
   } else {
     const data = snap.data();
     if(data.disabled===true){ alert('অ্যাকাউন্ট নিষ্ক্রিয় করা হয়েছে।'); await signOut(auth); return; }
@@ -941,16 +936,15 @@ async function ensureUserDoc(user) {
     userDocCache = Object.assign({},data,{lastLogin:now});
   }
   updStreakChip();
-  updGoalUI();
 }
 function updStreakChip(){ const s=(userDocCache&&userDocCache.streak)||{current:0}; $('#streakChip').innerHTML = '&#128293; '+toBn(s.current||0); }
 
-/* ===== NAV ===== */
+/* ============ NAV ============ */
 $$('#navTabs button, #bottomNav button').forEach(b=>b.addEventListener('click', ()=>{
   if(studyActive && b.dataset.tab!=='study'){ toast('পড়ার সেশন চলছে! আগে শেষ করো।'); return; }
   switchTab(b.dataset.tab);
 }));
-function switchTab(tab) {
+function switchTab(tab){
   $$('#navTabs button').forEach(b=>b.classList.toggle('active', b.dataset.tab===tab));
   $$('#bottomNav button').forEach(b=>b.classList.toggle('active', b.dataset.tab===tab));
   ['write','study','feed','dashboard','admin'].forEach(v=>{ const el=$('#view'+v.charAt(0).toUpperCase()+v.slice(1)); if(el) el.classList.toggle('active', v===tab); });
@@ -963,22 +957,68 @@ function switchTab(tab) {
 function updNavLock(){ $$('#navTabs button').forEach(b=>b.disabled = studyActive && b.dataset.tab!=='study'); $$('#bottomNav button').forEach(b=>b.disabled = studyActive && b.dataset.tab!=='study'); }
 $('#adminBtn').addEventListener('click', ()=>{ if(!isAdmin) return; if(studyActive) return toast('পড়ার সেশন চলছে!'); switchTab('admin'); });
 
-/* ===== WRITE ===== */
+/* ============ TOUR ============ */
+function showTour(){
+  tourIdx = 0;
+  $('#tourOverlay').classList.add('show');
+  renderTourStep();
+}
+function renderTourStep(){
+  if(tourIdx >= TOUR_STEPS.length){ $('#tourOverlay').classList.remove('show'); localStorage.setItem('tourDone','1'); return; }
+  const s = TOUR_STEPS[tourIdx];
+  $('#tourBox').innerHTML = '<div class="tour-step">ধাপ '+toBn(tourIdx+1)+' / '+toBn(TOUR_STEPS.length)+'</div>'+
+    '<h3>'+s.title+'</h3><p>'+s.text+'</p>'+
+    '<button class="primary big" id="tourNext">'+(tourIdx===TOUR_STEPS.length-1?'শুরু করো':'পরের →')+'</button>'+
+    '<button class="ghost tiny" id="tourSkip" style="margin-top:8px;width:100%">এড়িয়ে যাও</button>';
+  $('#tourNext').addEventListener('click', ()=>{ tourIdx++; renderTourStep(); });
+  $('#tourSkip').addEventListener('click', ()=>{ $('#tourOverlay').classList.remove('show'); localStorage.setItem('tourDone','1'); });
+}
+
+/* ============ COMMAND PALETTE ============ */
+const CMD_ITEMS = [
+  { name:'নতুন পাতা', icon:'&#9997;', action:()=>{ switchTab('write'); newEntry(); } },
+  { name:'পড়ার টাইমার', icon:'&#9201;', action:()=>switchTab('study') },
+  { name:'ড্যাশবোর্ড', icon:'&#128202;', action:()=>switchTab('dashboard') },
+  { name:'ফিড', icon:'&#127760;', action:()=>switchTab('feed') },
+  { name:'নতুন পড়ার নোট', icon:'&#128221;', action:()=>{ switchTab('study'); setTimeout(()=>{ $$('#studySubtabs button').forEach(b=>b.classList.toggle('active',b.dataset.stab==='notes')); $$('.study-panel').forEach(p=>p.style.display='none'); $('#stabNotes').style.display='block'; openStudyNoteEditor(null); },100); } },
+  { name:'নতুন To-Do', icon:'&#9745;', action:()=>{ switchTab('study'); setTimeout(()=>{ $$('#studySubtabs button').forEach(b=>b.classList.toggle('active',b.dataset.stab==='todos')); $$('.study-panel').forEach(p=>p.style.display='none'); $('#stabTodos').style.display='block'; openTodoEditor(null); },100); } },
+  { name:'নতুন বই', icon:'&#128214;', action:()=>{ switchTab('study'); setTimeout(()=>{ $$('#studySubtabs button').forEach(b=>b.classList.toggle('active',b.dataset.stab==='books')); $$('.study-panel').forEach(p=>p.style.display='none'); $('#stabBooks').style.display='block'; openBookEditor(null); },100); } },
+  { name:'থিম বদলাও', icon:'&#127749;', action:()=>$('#darkToggle').click() },
+  { name:'লগআউট', icon:'&#128682;', action:()=>$('#logoutBtn').click() }
+];
+function showCmd(){ $('#cmdOverlay').classList.add('show'); $('#cmdInput').value=''; $('#cmdInput').focus(); renderCmd(''); }
+function hideCmd(){ $('#cmdOverlay').classList.remove('show'); }
+function renderCmd(term){
+  const t = term.toLowerCase();
+  const list = CMD_ITEMS.filter(i=>i.name.toLowerCase().includes(t));
+  $('#cmdList').innerHTML = list.length ? list.map((i,idx)=>'<div class="cmd-item" data-idx="'+idx+'"><span class="icon">'+i.icon+'</span>'+i.name+'</div>').join('') : '<div class="cmd-item" style="color:var(--muted)">কিছু পাওয়া যায়নি</div>';
+  $$('#cmdList .cmd-item').forEach((el,i)=>{ if(list[i]) el.addEventListener('click', ()=>{ list[i].action(); hideCmd(); }); });
+}
+$('#cmdBtn').addEventListener('click', showCmd);
+$('#cmdOverlay').addEventListener('click', e=>{ if(e.target.id==='cmdOverlay') hideCmd(); });
+$('#cmdInput').addEventListener('input', e=>renderCmd(e.target.value));
+document.addEventListener('keydown', e=>{
+  if((e.ctrlKey||e.metaKey) && e.key==='k'){ e.preventDefault(); showCmd(); }
+  if(e.key==='Escape') hideCmd();
+  if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='s' && $('#viewWrite').classList.contains('active')){ e.preventDefault(); clearTimeout(saveTimer); save(); }
+});
+
+/* ============ WRITE ============ */
 function showRandomPrompt(){ $('#promptText').textContent = PROMPTS[Math.floor(Math.random()*PROMPTS.length)]; }
 $('#newPromptBtn').addEventListener('click', showRandomPrompt);
 
-function subscribeEntries() {
+function subscribeEntries(){
   if(unsubEntries) unsubEntries();
   unsubEntries = onSnapshot(query(collection(db,'users',uid,'entries'), orderBy('updatedAt','desc')), snap=>{
     entries = snap.docs.map(d=>Object.assign({id:d.id},d.data()));
     renderList();
   }, err=>{ console.error(err); setStatus('লোড হয়নি: '+err.message); });
 }
-function renderList() {
+function renderList(){
   const term = ($('#search').value||'').trim().toLowerCase();
   const list = entries.filter(e=>!term||(e.title||'').toLowerCase().includes(term)||(e.body||'').toLowerCase().includes(term)||(e.tags||[]).some(t=>t.toLowerCase().includes(term)));
   const box=$('#list');
-  if(!list.length){ box.innerHTML='<p class="empty">'+(term?'কিছু পাওয়া গেল না।':'এখনো পাতা নেই।<br>লেখা শুরু করো।')+'</p>'; return; }
+  if(!list.length){ box.innerHTML = emptyState('&#128221;', term?'কিছু পাওয়া যায়নি':'এখনো পাতা নেই', term?'অন্য কীওয়ার্ড দিয়ে চেষ্টা করো':'নিচের "সংরক্ষণ" বাটনে চাপো', term?'':'লেখা শুরু করো', 'emptyWriteStart'); if(term!==''||true) { const b=$('#emptyWriteStart'); if(b) b.addEventListener('click',()=>{$('#title').focus();}); } return; }
   box.innerHTML = list.map(e=>{
     const tg = (e.tags&&e.tags.length)?' '+e.tags.map(t=>'#'+esc(t)).join(' '):'';
     return '<div class="card '+(e.id===currentId?'active':'')+'" data-id="'+e.id+'">'+
@@ -990,7 +1030,7 @@ function renderList() {
 $('#list').addEventListener('click', e=>{ const c=e.target.closest('.card'); if(c) openEntry(c.dataset.id); });
 let searchTimer; $('#search').addEventListener('input', ()=>{ clearTimeout(searchTimer); searchTimer=setTimeout(renderList,250); });
 
-async function openEntry(id) {
+async function openEntry(id){
   if(id===currentId) return;
   if(isDirty) await save();
   const en = entries.find(x=>x.id===id); if(!en) return;
@@ -1008,25 +1048,25 @@ function newEntry(){
   $('#dateLabel').textContent=fmtDate(Date.now());
   $('#deleteBtn').disabled=true; isDirty=false;
   setTypeUI(); updateCount(); renderList(); setStatus('নতুন পাতা');
+  $('#title').focus();
 }
 function parseTags(s){ return String(s||'').split(/[\s,]+/).map(t=>t.replace(/^#/,'').trim()).filter(Boolean).slice(0,8); }
 
-async function save() {
+async function save(){
   const title=$('#title').value.trim(), body=$('#body').value;
   if(!title && !body.trim()) return;
   setStatus('সংরক্ষণ হচ্ছে...');
   const tags=parseTags($('#tagsInput').value), isPublic=$('#publicToggle').checked;
-  try {
-    const now=Date.now();
-    let entryId=currentId;
+  try{
+    const now=Date.now(); let entryId=currentId;
     if(currentId) await updateDoc(doc(db,'users',uid,'entries',currentId),{title,body,type:currentType,tags,isPublic,updatedAt:now});
     else { const ref=await addDoc(collection(db,'users',uid,'entries'),{title,body,type:currentType,tags,isPublic,createdAt:now,updatedAt:now}); entryId=ref.id; currentId=entryId; $('#deleteBtn').disabled=false; renderList(); }
-    if(isPublic) {
+    if(isPublic){
       const pubRef=doc(db,'public_entries',entryId);
       const ps=await getDoc(pubRef);
       const pd={authorId:uid,authorName:currentUser.displayName||currentUser.email.split('@')[0],title,body,type:currentType,tags,createdAt:now,updatedAt:now};
       if(!ps.exists()){ pd.likedBy=[]; await setDoc(pubRef,pd); } else await updateDoc(pubRef,pd);
-    } else { try{await deleteDoc(doc(db,'public_entries',entryId));}catch(e){} }
+    } else { try{ await deleteDoc(doc(db,'public_entries',entryId)); }catch(e){} }
     await bumpStreak();
     isDirty=false; setStatus('সংরক্ষিত'); toast('সংরক্ষিত হয়েছে'); feedLoaded=false;
   } catch(err){ console.error(err); setStatus('সমস্যা: '+err.message); }
@@ -1058,20 +1098,19 @@ $$('.type-toggle button').forEach(b=>b.addEventListener('click', ()=>{ currentTy
 function setTypeUI(){ $$('.type-toggle button').forEach(b=>b.classList.toggle('active', b.dataset.type===currentType)); }
 function setStatus(t){ $('#status').textContent=t; }
 function updateCount(){ const t=$('#body').value; const w=t.trim()?t.trim().split(/\s+/).length:0; const r=Math.max(1,Math.round(w/200)); $('#count').textContent=toBn(w)+' শব্দ · '+toBn(r)+' মিনিট'; }
-document.addEventListener('keydown', e=>{ if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'){ e.preventDefault(); clearTimeout(saveTimer); save(); } });
 
-/* ===== FEED ===== */
+/* ============ FEED ============ */
 $$('#feedFilter button').forEach(b=>b.addEventListener('click', ()=>{ $$('#feedFilter button').forEach(x=>x.classList.toggle('active',x===b)); feedFilter=b.dataset.filter; loadFeed(true); }));
 async function loadFeed(reset){
   if(reset){ feedEntries=[]; feedLastDoc=null; feedHasMore=true; $('#feedGrid').innerHTML='<p class="empty">লোড হচ্ছে...</p>'; }
   if(!feedHasMore) return;
-  try {
+  try{
     const cs=[orderBy('createdAt','desc')];
     if(feedFilter!=='all') cs.push(where('type','==',feedFilter));
     if(feedLastDoc) cs.push(startAfter(feedLastDoc));
     cs.push(limit(PAGE_SIZE));
     const snap=await getDocs(query(collection(db,'public_entries'),...cs));
-    if(snap.empty){ feedHasMore=false; if(reset) $('#feedGrid').innerHTML='<p class="empty">এখনো পাবলিক লেখা নেই।</p>'; $('#loadMoreBtn').style.display='none'; return; }
+    if(snap.empty){ feedHasMore=false; if(reset) $('#feedGrid').innerHTML = emptyState('&#127760;','এখনো পাবলিক লেখা নেই','তুমিই প্রথম শেয়ার করো!'); $('#loadMoreBtn').style.display='none'; return; }
     feedLastDoc=snap.docs[snap.docs.length-1];
     feedHasMore=snap.size===PAGE_SIZE;
     feedEntries=feedEntries.concat(snap.docs.map(d=>Object.assign({id:d.id},d.data())));
@@ -1082,7 +1121,7 @@ async function loadFeed(reset){
 $('#loadMoreBtn').addEventListener('click', ()=>loadFeed(false));
 function renderFeed(){
   const box=$('#feedGrid');
-  if(!feedEntries.length){ box.innerHTML='<p class="empty">এখনো পাবলিক লেখা নেই।</p>'; return; }
+  if(!feedEntries.length){ box.innerHTML = emptyState('&#127760;','এখনো পাবলিক লেখা নেই','তুমিই প্রথম শেয়ার করো!'); return; }
   box.innerHTML = feedEntries.map(e=>{
     const liked=(e.likedBy||[]).includes(uid), lc=(e.likedBy||[]).length;
     const tg=(e.tags||[]).map(t=>'<span class="tag">#'+esc(t)+'</span>').join('');
@@ -1108,7 +1147,7 @@ async function toggleLike(id){
 async function openEntryModal(id){
   const c=$('#entryModalContent'); c.innerHTML='<p class="empty">লোড হচ্ছে...</p>';
   $('#entryModal').classList.add('show');
-  try {
+  try{
     const snap=await getDoc(doc(db,'public_entries',id));
     if(!snap.exists()){ c.innerHTML='<p class="empty">পাওয়া যায়নি।</p>'; return; }
     const e=Object.assign({id:snap.id},snap.data());
@@ -1130,7 +1169,7 @@ async function openEntryModal(id){
 }
 async function loadComments(id){
   const box=$('#commentsList'); if(!box) return;
-  try {
+  try{
     const snap=await getDocs(query(collection(db,'public_entries',id,'comments'), orderBy('createdAt','asc')));
     if(snap.empty){ box.innerHTML='<p class="empty" style="padding:8px">এখনো মন্তব্য নেই।</p>'; return; }
     box.innerHTML = snap.docs.map(d=>{
@@ -1152,15 +1191,13 @@ $('#entryModal').addEventListener('click', e=>{ if(e.target.id==='entryModal') $
 $('#genericModalClose').addEventListener('click', ()=>$('#genericModal').classList.remove('show'));
 $('#genericModal').addEventListener('click', e=>{ if(e.target.id==='genericModal') $('#genericModal').classList.remove('show'); });
 
-/* ===== STUDY TABS ===== */
+/* ============ STUDY ============ */
 function loadStudyTab(){
-  // Lazy subscribe on first visit
   if(!loadedTabs.sessions){ loadedTabs.sessions=true; subStudySessions(); }
   if(!loadedTabs.notes){ loadedTabs.notes=true; subStudyNotes(); }
   if(!loadedTabs.todos){ loadedTabs.todos=true; subStudyTodos(); }
   if(!loadedTabs.cards){ loadedTabs.cards=true; subStudyCards(); }
   if(!loadedTabs.books){ loadedTabs.books=true; subBooks(); }
-  if(!loadedTabs.exams){ loadedTabs.exams=true; subExams(); }
   if(!loadedTabs.class){ loadedTabs.class=true; subClassLinks(); }
   loadStudyStats();
   updGoalUI();
@@ -1180,47 +1217,41 @@ $$('#studySubtabs button').forEach(b=>b.addEventListener('click', ()=>{
   if(b.dataset.stab==='notes') renderStudyNotes();
 }));
 
-/* duration */
 $$('#durationGrid button').forEach(b=>b.addEventListener('click', ()=>{
   $$('#durationGrid button').forEach(x=>x.classList.remove('active')); b.classList.add('active');
   if(b.dataset.min==='custom'){ $('#customMinWrap').style.display='flex'; studyDuration=parseInt($('#customMin').value)||30; }
   else { $('#customMinWrap').style.display='none'; studyDuration=parseInt(b.dataset.min); }
 }));
 $('#customMin').addEventListener('input', ()=>{ studyDuration=Math.max(5,Math.min(180,parseInt($('#customMin').value)||30)); });
+$('#classModeToggle').addEventListener('change', e=>{ $('#classSelect').style.display = e.target.checked?'inline-block':'none'; });
 
-/* class mode toggle */
-$('#classModeToggle').addEventListener('change', e=>{
-  $('#classSelect').style.display = e.target.checked?'inline-block':'none';
-});
-
-/* ===== STUDY SUBSCRIPTIONS ===== */
-let unsubStudySessions=null, unsubStudyNotes=null, unsubStudyTodos=null, unsubStudyCards=null, unsubBooks=null, unsubExams=null, unsubClassLinks=null;
+let unsubSessions=null, unsubNotes=null, unsubTodos=null, unsubCards=null, unsubBooks=null, unsubExams=null, unsubClassLinks=null;
 
 function subStudySessions(){
-  if(unsubStudySessions) unsubStudySessions();
-  unsubStudySessions = onSnapshot(query(collection(db,'users',uid,'study_sessions'), orderBy('startedAt','desc'), limit(500)), snap=>{
+  if(unsubSessions) unsubSessions();
+  unsubSessions = onSnapshot(query(collection(db,'users',uid,'study_sessions'), orderBy('startedAt','desc'), limit(500)), snap=>{
     studySessions=snap.docs.map(d=>Object.assign({id:d.id},d.data()));
     updateStudyTotal(); if($('#viewStudy').classList.contains('active')) loadStudyStats();
     updGoalUI();
   }, err=>console.error(err));
 }
 function subStudyNotes(){
-  if(unsubStudyNotes) unsubStudyNotes();
-  unsubStudyNotes = onSnapshot(query(collection(db,'users',uid,'study_notes'), orderBy('updatedAt','desc')), snap=>{
+  if(unsubNotes) unsubNotes();
+  unsubNotes = onSnapshot(query(collection(db,'users',uid,'study_notes'), orderBy('updatedAt','desc')), snap=>{
     studyNotes=snap.docs.map(d=>Object.assign({id:d.id},d.data()));
     renderStudyNotes();
   }, err=>console.error(err));
 }
 function subStudyTodos(){
-  if(unsubStudyTodos) unsubStudyTodos();
-  unsubStudyTodos = onSnapshot(query(collection(db,'users',uid,'study_todos'), orderBy('createdAt','desc')), snap=>{
+  if(unsubTodos) unsubTodos();
+  unsubTodos = onSnapshot(query(collection(db,'users',uid,'study_todos'), orderBy('createdAt','desc')), snap=>{
     studyTodos=snap.docs.map(d=>Object.assign({id:d.id},d.data()));
     renderTodos();
   }, err=>console.error(err));
 }
 function subStudyCards(){
-  if(unsubStudyCards) unsubStudyCards();
-  unsubStudyCards = onSnapshot(query(collection(db,'users',uid,'study_cards'), orderBy('createdAt','desc')), snap=>{
+  if(unsubCards) unsubCards();
+  unsubCards = onSnapshot(query(collection(db,'users',uid,'study_cards'), orderBy('createdAt','desc')), snap=>{
     studyCards=snap.docs.map(d=>Object.assign({id:d.id},d.data()));
     renderCards();
   }, err=>console.error(err));
@@ -1236,7 +1267,7 @@ function subExams(){
   if(unsubExams) unsubExams();
   unsubExams = onSnapshot(query(collection(db,'users',uid,'exams'), orderBy('date','asc')), snap=>{
     exams=snap.docs.map(d=>Object.assign({id:d.id},d.data()));
-    renderExams(); renderDashExams();
+    renderDashExams();
   }, err=>console.error(err));
 }
 function subClassLinks(){
@@ -1252,42 +1283,19 @@ function updateStudyTotal(){ const min=studySessions.reduce((s,x)=>s+(x.actualMi
 $('#addTodoBtn').addEventListener('click', ()=>openTodoEditor(null));
 function renderTodos(){
   const box=$('#todoList');
-  const today=todayKey();
-  const todayTodos = studyTodos.filter(t=>!t.forDate || t.forDate===today);
-  const otherTodos = studyTodos.filter(t=>t.forDate && t.forDate!==today).slice(0,5);
-  const list = todayTodos.concat(otherTodos);
-  if(!list.length){ box.innerHTML='<p class="empty">কোনো কাজ নেই। "কাজ যোগ" চাপো।</p>'; return; }
-  box.innerHTML = list.map(t=>{
-    const isToday = !t.forDate || t.forDate===today;
-    return '<div class="todo-item '+(t.done?'done':'')+'"><input type="checkbox" class="todo-check" data-id="'+t.id+'" '+(t.done?'checked':'')+'>'+
-      '<span class="todo-text">'+esc(t.text)+(isToday?'':' <span style="font-size:10.5px;color:var(--muted2)">('+esc(t.forDate)+')</span>')+'</span>'+
-      '<span class="todo-actions"><button class="tiny ghost edit-todo" data-id="'+t.id+'">&#9998;</button><button class="tiny danger del-todo" data-id="'+t.id+'">&#10005;</button></span></div>';
-  }).join('');
-  box.querySelectorAll('.todo-check').forEach(c=>c.addEventListener('change', async ()=>{
-    await updateDoc(doc(db,'users',uid,'study_todos',c.dataset.id),{done:c.checked});
-  }));
+  if(!studyTodos.length){ box.innerHTML = emptyState('&#9745;','কোনো কাজ নেই','আজ কী কী পড়বে তার একটা তালিকা বানাও','প্রথম কাজ যোগ করো','emptyTodoBtn'); const b=$('#emptyTodoBtn'); if(b) b.addEventListener('click',()=>openTodoEditor(null)); return; }
+  box.innerHTML = studyTodos.map(t=>'<div class="todo-item '+(t.done?'done':'')+'"><input type="checkbox" class="todo-check" data-id="'+t.id+'" '+(t.done?'checked':'')+'><span class="todo-text">'+esc(t.text)+'</span><span class="todo-actions"><button class="tiny ghost edit-todo" data-id="'+t.id+'">&#9998;</button><button class="tiny danger del-todo" data-id="'+t.id+'">&#10005;</button></span></div>').join('');
+  box.querySelectorAll('.todo-check').forEach(c=>c.addEventListener('change', async ()=>{ await updateDoc(doc(db,'users',uid,'study_todos',c.dataset.id),{done:c.checked}); }));
   box.querySelectorAll('.edit-todo').forEach(b=>b.addEventListener('click', ()=>openTodoEditor(b.dataset.id)));
-  box.querySelectorAll('.del-todo').forEach(b=>b.addEventListener('click', async ()=>{
-    if(!confirm('মুছে ফেলবে?')) return;
-    await deleteDoc(doc(db,'users',uid,'study_todos',b.dataset.id));
-  }));
+  box.querySelectorAll('.del-todo').forEach(b=>b.addEventListener('click', async ()=>{ if(!confirm('মুছে ফেলবে?')) return; await deleteDoc(doc(db,'users',uid,'study_todos',b.dataset.id)); }));
 }
 function openTodoEditor(id){
   const t = id ? studyTodos.find(x=>x.id===id) : null;
-  const c=$('#genericModalContent');
-  c.innerHTML='<h2 class="modal-title">'+(id?'কাজ এডিট':'নতুন কাজ')+'</h2>'+
-    '<div class="field"><label>কাজ</label><input id="todoText" type="text" value="'+esc(t?t.text:'')+'" placeholder="যেমন: গণিত ২ অধ্যায়"></div>'+
-    '<div class="field"><label>তারিখ (ঐচ্ছিক)</label><input id="todoDate" type="date" value="'+(t&&t.forDate?t.forDate:todayKey())+'"></div>'+
-    '<div class="modal-actions"><button class="primary" id="saveTodo">সেভ</button></div>';
+  $('#genericModalContent').innerHTML='<h2 class="modal-title">'+(id?'কাজ এডিট':'নতুন কাজ')+'</h2><div class="field"><label>কাজ</label><input id="todoText" type="text" value="'+esc(t?t.text:'')+'" placeholder="যেমন: গণিত ২ অধ্যায়"></div><div class="modal-actions"><button class="primary" id="saveTodo">সেভ</button></div>';
   $('#genericModal').classList.add('show');
   $('#saveTodo').addEventListener('click', async ()=>{
     const text=$('#todoText').value.trim(); if(!text) return toast('কিছু লেখো');
-    const forDate=$('#todoDate').value;
-    try {
-      if(id) await updateDoc(doc(db,'users',uid,'study_todos',id),{text,forDate});
-      else await addDoc(collection(db,'users',uid,'study_todos'),{text,forDate,done:false,createdAt:Date.now()});
-      $('#genericModal').classList.remove('show'); toast('সেভ');
-    } catch(e){ toast('সমস্যা'); }
+    try{ if(id) await updateDoc(doc(db,'users',uid,'study_todos',id),{text}); else await addDoc(collection(db,'users',uid,'study_todos'),{text,done:false,createdAt:Date.now()}); $('#genericModal').classList.remove('show'); toast('সেভ'); }catch(e){ toast('সমস্যা'); }
   });
 }
 
@@ -1296,11 +1304,7 @@ $('#editGoalBtn').addEventListener('click', editGoal);
 $('#editGoalBtn2').addEventListener('click', editGoal);
 function editGoal(){
   const cur = (userDocCache && userDocCache.dailyGoal)||120;
-  const c=$('#genericModalContent');
-  c.innerHTML='<h2 class="modal-title">দৈনিক পড়ার লক্ষ্য</h2>'+
-    '<div class="field"><label>কত মিনিট পড়তে চাও প্রতিদিন?</label><input id="goalMinInput" type="number" min="15" max="600" value="'+cur+'"></div>'+
-    '<p style="font-size:12.5px;color:var(--muted)">যেমন: ১২০ = ২ ঘণ্টা</p>'+
-    '<div class="modal-actions"><button class="primary" id="saveGoal">সেভ</button></div>';
+  $('#genericModalContent').innerHTML='<h2 class="modal-title">দৈনিক পড়ার লক্ষ্য</h2><div class="field"><label>কত মিনিট পড়তে চাও প্রতিদিন?</label><input id="goalMinInput" type="number" min="15" max="600" value="'+cur+'"></div><p style="font-size:12.5px;color:var(--muted)">যেমন: ১২০ = ২ ঘণ্টা</p><div class="modal-actions"><button class="primary" id="saveGoal">সেভ</button></div>';
   $('#genericModal').classList.add('show');
   $('#saveGoal').addEventListener('click', async ()=>{
     const v = Math.max(15, Math.min(600, parseInt($('#goalMinInput').value)||120));
@@ -1313,20 +1317,19 @@ function updGoalUI(){
   const todayMin = studySessions.filter(s=>{ const d=new Date(s.startedAt); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')===today; }).reduce((a,s)=>a+(s.actualMin||0),0);
   const pct = Math.min(100, Math.round((todayMin/goal)*100));
   const txt = toBn(Math.round(todayMin))+' / '+toBn(goal)+' মিনিট';
-  const fill = $('#goalFill'); if(fill){ fill.style.width=pct+'%'; fill.textContent=pct>15?toBn(pct)+'%':''; fill.classList.toggle('warn', pct<50); }
-  const gt=$('#goalText'); if(gt) gt.textContent=txt;
-  const gp=$('#goalPct'); if(gp) gp.textContent=toBn(pct)+'%';
-  const df=$('#dashGoalFill'); if(df){ df.style.width=pct+'%'; df.textContent=pct>15?toBn(pct)+'%':''; df.classList.toggle('warn',pct<50); }
-  const dt=$('#dashGoalText'); if(dt) dt.textContent=txt;
-  const dp=$('#dashGoalPct'); if(dp) dp.textContent=toBn(pct)+'%';
+  [['goalFill','goalText','goalPct'],['dashGoalFill','dashGoalText','dashGoalPct']].forEach(([f,t,p])=>{
+    const fill = $('#'+f); if(fill){ fill.style.width=pct+'%'; fill.textContent=pct>15?toBn(pct)+'%':''; fill.classList.toggle('warn', pct<50); }
+    const gt=$('#'+t); if(gt) gt.textContent=txt;
+    const gp=$('#'+p); if(gp) gp.textContent=toBn(pct)+'%';
+  });
 }
 
-/* ===== FLASHCARDS ===== */
+/* ===== CARDS ===== */
 $('#addCardBtn').addEventListener('click', ()=>openCardEditor(null));
 $('#autoGenCards').addEventListener('click', autoGenCards);
 function renderCards(){
   const box=$('#cardsView');
-  if(!studyCards.length){ box.innerHTML='<p class="empty">এখনো কার্ড নেই। "নোট থেকে বানাও" চাপলে অটো কার্ড তৈরি হবে।</p>'; return; }
+  if(!studyCards.length){ box.innerHTML = emptyState('&#127183;','এখনো কার্ড নেই','"নোট থেকে বানাও" চাপলে অটো কার্ড তৈরি হবে','কার্ড বানাও','emptyCardBtn'); const b=$('#emptyCardBtn'); if(b) b.addEventListener('click',()=>openCardEditor(null)); return; }
   if(cardIdx >= studyCards.length) cardIdx=0;
   if(cardIdx < 0) cardIdx = studyCards.length-1;
   const card = studyCards[cardIdx];
@@ -1334,7 +1337,7 @@ function renderCards(){
     '<div class="flashcard-controls"><button class="tiny ghost" id="cardPrev">&#8592; আগের</button><span style="font-size:13px;color:var(--muted);padding:0 10px">'+toBn(cardIdx+1)+' / '+toBn(studyCards.length)+'</span><button class="tiny ghost" id="cardNext">পরের &#8594;</button></div>'+
     '<div class="flashcard '+(cardFlipped?'side-back':'')+'" id="flashCard"><span class="flashcard-side-label">'+(cardFlipped?'পিছন':'সামনে')+'</span><div class="flashcard-content">'+esc(cardFlipped?(card.back||''):(card.front||''))+'</div><span class="flashcard-hint">ক্লিক করে উল্টাও</span></div>'+
     '<div class="flashcard-stats"><span>সঠিক: '+toBn(cardCorrect)+'</span><span>ভুল: '+toBn(cardWrong)+'</span></div>'+
-    '<div class="flashcard-controls"><button class="primary tiny" id="cardRight">&#10004; জানি</button><button class="tiny danger" id="cardWrong">&#10005; জানি না</button><button class="tiny ghost" id="cardEdit">&#9998; এডিট</button><button class="tiny danger" id="cardDel">মুছে ফেলো</button></div>';
+    '<div class="flashcard-controls"><button class="primary tiny" id="cardRight">&#10004; জানি</button><button class="tiny danger" id="cardWrong">&#10005; জানি না</button><button class="tiny ghost" id="cardEdit">&#9998; এডিট</button><button class="tiny danger" id="cardDel">মুছো</button></div>';
   $('#flashCard').addEventListener('click', ()=>{ cardFlipped=!cardFlipped; renderCards(); });
   $('#cardPrev').addEventListener('click', ()=>{ cardIdx--; cardFlipped=false; renderCards(); });
   $('#cardNext').addEventListener('click', ()=>{ cardIdx++; cardFlipped=false; renderCards(); });
@@ -1345,11 +1348,7 @@ function renderCards(){
 }
 function openCardEditor(id){
   const c = id ? studyCards.find(x=>x.id===id) : null;
-  const m=$('#genericModalContent');
-  m.innerHTML='<h2 class="modal-title">'+(id?'কার্ড এডিট':'নতুন কার্ড')+'</h2>'+
-    '<div class="field"><label>সামনে (প্রশ্ন)</label><textarea id="cf" style="min-height:80px">'+esc(c?c.front:'')+'</textarea></div>'+
-    '<div class="field"><label>পিছনে (উত্তর)</label><textarea id="cb" style="min-height:80px">'+esc(c?c.back:'')+'</textarea></div>'+
-    '<div class="modal-actions"><button class="primary" id="saveCard">সেভ</button></div>';
+  $('#genericModalContent').innerHTML='<h2 class="modal-title">'+(id?'কার্ড এডিট':'নতুন কার্ড')+'</h2><div class="field"><label>সামনে (প্রশ্ন)</label><textarea id="cf" style="min-height:80px">'+esc(c?c.front:'')+'</textarea></div><div class="field"><label>পিছনে (উত্তর)</label><textarea id="cb" style="min-height:80px">'+esc(c?c.back:'')+'</textarea></div><div class="modal-actions"><button class="primary" id="saveCard">সেভ</button></div>';
   $('#genericModal').classList.add('show');
   $('#saveCard').addEventListener('click', async ()=>{
     const front=$('#cf').value.trim(), back=$('#cb').value.trim();
@@ -1359,10 +1358,7 @@ function openCardEditor(id){
 }
 async function autoGenCards(){
   if(!studyNotes.length) return toast('আগে পড়ার নোট বানাও');
-  const c=$('#genericModalContent');
-  c.innerHTML='<h2 class="modal-title">নোট থেকে কার্ড</h2><p style="font-size:13.5px;color:var(--muted);line-height:1.7">প্রতিটি নোটের প্রথম লাইন প্রশ্ন হবে, বাকিটা উত্তর। কতটি কার্ড বানাবে?</p>'+
-    '<div class="field"><label>সর্বোচ্চ কার্ড</label><input id="acCount" type="number" min="1" max="50" value="'+Math.min(studyNotes.length,10)+'"></div>'+
-    '<div class="modal-actions"><button class="primary" id="doAutoGen">বানাও</button></div>';
+  $('#genericModalContent').innerHTML='<h2 class="modal-title">নোট থেকে কার্ড</h2><p style="font-size:13.5px;color:var(--muted);line-height:1.7">প্রতিটি নোটের প্রথম লাইন প্রশ্ন হবে, বাকিটা উত্তর।</p><div class="field"><label>সর্বোচ্চ কার্ড</label><input id="acCount" type="number" min="1" max="50" value="'+Math.min(studyNotes.length,10)+'"></div><div class="modal-actions"><button class="primary" id="doAutoGen">বানাও</button></div>';
   $('#genericModal').classList.add('show');
   $('#doAutoGen').addEventListener('click', async ()=>{
     const n = Math.max(1, Math.min(50, parseInt($('#acCount').value)||10));
@@ -1373,7 +1369,7 @@ async function autoGenCards(){
       const front = note.title || (lines[0]||'').slice(0,80);
       const back = lines.slice(note.title?0:1).join('\n') || (note.body||'').slice(0,300);
       if(!front || !back) continue;
-      await addDoc(collection(db,'users',uid,'study_cards'),{front:front,back:back,createdAt:Date.now()});
+      await addDoc(collection(db,'users',uid,'study_cards'),{front,back,createdAt:Date.now()});
       count++;
     }
     $('#genericModal').classList.remove('show');
@@ -1385,7 +1381,7 @@ async function autoGenCards(){
 $('#addBookBtn').addEventListener('click', ()=>openBookEditor(null));
 function renderBooks(){
   const box=$('#booksList');
-  if(!books.length){ box.innerHTML='<p class="empty">এখনো বই নেই। "বই যোগ" চাপো।</p>'; return; }
+  if(!books.length){ box.innerHTML = emptyState('&#128214;','এখনো বই নেই','কোন বই পড়ছ সেটা যোগ করো','বই যোগ করো','emptyBookBtn'); const b=$('#emptyBookBtn'); if(b) b.addEventListener('click',()=>openBookEditor(null)); return; }
   box.innerHTML = books.map(b=>{
     const pct = b.total? Math.round((b.current/b.total)*100) : 0;
     return '<div class="book-item"><div class="book-head"><div><h3 class="book-title">'+esc(b.title||'শিরোনামহীন')+'</h3>'+(b.author?'<div class="book-author">'+esc(b.author)+'</div>':'')+'</div>'+
@@ -1394,12 +1390,11 @@ function renderBooks(){
       '<div class="book-meta"><span>'+toBn(b.current||0)+' / '+toBn(b.total||0)+' পৃষ্ঠা</span><span>'+toBn(pct)+'%</span></div></div>';
   }).join('');
   box.querySelectorAll('.edit-book').forEach(el=>el.addEventListener('click', ()=>openBookEditor(el.dataset.id)));
-  box.querySelectorAll('.del-book').forEach(el=>el.addEventListener('click', async ()=>{ if(!confirm('মুছে ফেলবে?')) return; await deleteDoc(doc(db,'users',uid,'books',el.dataset.id)); toast('মুছে ফেলা'); }));
+  box.querySelectorAll('.del-book').forEach(el=>el.addEventListener('click', async ()=>{ if(!confirm('মুছে ফেলবে?')) return; await deleteDoc(doc(db,'users',uid,'books',el.dataset.id)); }));
 }
 function openBookEditor(id){
   const b = id ? books.find(x=>x.id===id) : null;
-  const c=$('#genericModalContent');
-  c.innerHTML='<h2 class="modal-title">'+(id?'বই এডিট':'নতুন বই')+'</h2>'+
+  $('#genericModalContent').innerHTML='<h2 class="modal-title">'+(id?'বই এডিট':'নতুন বই')+'</h2>'+
     '<div class="field"><label>বইয়ের নাম</label><input id="bTitle" type="text" value="'+esc(b?b.title:'')+'"></div>'+
     '<div class="field"><label>লেখক</label><input id="bAuthor" type="text" value="'+esc(b?b.author:'')+'"></div>'+
     '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">'+
@@ -1419,7 +1414,6 @@ function openBookEditor(id){
 
 /* ===== EXAMS ===== */
 $('#addExamBtn').addEventListener('click', ()=>openExamEditor());
-function renderExams(){ /* handled by renderDashExams */ }
 function renderDashExams(){
   const strip = $('#examStrip');
   const now = Date.now();
@@ -1428,21 +1422,14 @@ function renderDashExams(){
   strip.innerHTML = upcoming.map(e=>{
     const days = daysBetween(now, new Date(e.date).getTime());
     const dn = days<0 ? 'শেষ' : days===0 ? 'আজ' : toBn(days)+' দিন';
-    return '<div class="exam-chip"><button class="exam-del" data-id="'+e.id+'">&#10005;</button>'+
-      '<div class="exam-name">'+esc(e.name)+'</div>'+
-      '<div class="exam-days">'+dn+' <small>বাকি</small></div>'+
-      '<div class="exam-date">'+fmtDate(e.date)+'</div></div>';
+    return '<div class="exam-chip"><button class="exam-del" data-id="'+e.id+'">&#10005;</button><div class="exam-name">'+esc(e.name)+'</div><div class="exam-days">'+dn+' <small>বাকি</small></div><div class="exam-date">'+fmtDate(e.date)+'</div></div>';
   }).join('');
   strip.querySelectorAll('.exam-del').forEach(b=>b.addEventListener('click', async ()=>{ if(!confirm('মুছে ফেলবে?')) return; await deleteDoc(doc(db,'users',uid,'exams',b.dataset.id)); }));
 }
 function openExamEditor(){
-  const c=$('#genericModalContent');
   const tomorrow = new Date(); tomorrow.setDate(tomorrow.getDate()+7);
   const defaultDate = tomorrow.toISOString().slice(0,10);
-  c.innerHTML='<h2 class="modal-title">নতুন পরীক্ষা</h2>'+
-    '<div class="field"><label>পরীক্ষার নাম</label><input id="exName" type="text" placeholder="যেমন: গণিত ফাইনাল"></div>'+
-    '<div class="field"><label>তারিখ</label><input id="exDate" type="date" value="'+defaultDate+'"></div>'+
-    '<div class="modal-actions"><button class="primary" id="saveExam">সেভ</button></div>';
+  $('#genericModalContent').innerHTML='<h2 class="modal-title">নতুন পরীক্ষা</h2><div class="field"><label>পরীক্ষার নাম</label><input id="exName" type="text" placeholder="যেমন: গণিত ফাইনাল"></div><div class="field"><label>তারিখ</label><input id="exDate" type="date" value="'+defaultDate+'"></div><div class="modal-actions"><button class="primary" id="saveExam">সেভ</button></div>';
   $('#genericModal').classList.add('show');
   $('#saveExam').addEventListener('click', async ()=>{
     const name=$('#exName').value.trim(); if(!name) return toast('নাম লেখো');
@@ -1451,11 +1438,11 @@ function openExamEditor(){
   });
 }
 
-/* ===== CLASS LINKS ===== */
+/* ===== CLASS ===== */
 $('#addClassBtn').addEventListener('click', ()=>openClassEditor(null));
 function renderClassLinks(){
   const box=$('#classList');
-  if(!classLinks.length){ box.innerHTML='<p class="empty">এখনো ক্লাস লিংক নেই। "ক্লাস যোগ" চাপো।</p>'; return; }
+  if(!classLinks.length){ box.innerHTML = emptyState('&#127909;','এখনো ক্লাস লিংক নেই','Physics Hunters-এর লিংক যোগ করো (নতুন ট্যাবে খুলবে, টাইমার চলবে)','প্রথম ক্লাস যোগ করো','emptyClassBtn'); const b=$('#emptyClassBtn'); if(b) b.addEventListener('click',()=>openClassEditor(null)); return; }
   box.innerHTML = classLinks.map(c=>{
     const platform = detectPlatform(c.url);
     return '<div class="class-item"><div class="class-info"><div class="class-name">'+esc(c.name)+'<span class="class-platform">'+platform+'</span></div><div class="class-url">'+esc(c.url)+'</div></div>'+
@@ -1466,15 +1453,21 @@ function renderClassLinks(){
   box.querySelectorAll('.del-class').forEach(b=>b.addEventListener('click', async ()=>{ if(!confirm('মুছে ফেলবে?')) return; await deleteDoc(doc(db,'users',uid,'class_links',b.dataset.id)); toast('মুছে ফেলা'); }));
 }
 function detectPlatform(url){
+  if(/phyhunt\.com/.test(url)) return 'Physics Hunters';
   if(/meet\.google/.test(url)) return 'Google Meet';
   if(/zoom\.us/.test(url)) return 'Zoom';
   if(/teams\.microsoft/.test(url)) return 'Teams';
   if(/meet\.jit\.si|jit\.si/.test(url)) return 'Jitsi';
-  if(/webex/.test(url)) return 'Webex';
+  if(/youtube\.com|youtu\.be/.test(url)) return 'YouTube';
+  if(/drive\.google/.test(url)) return 'Google Drive';
+  if(/vimeo/.test(url)) return 'Vimeo';
   return 'লিংক';
 }
-function canEmbed(url){
-  return /jit\.si|meet\.jit\.si/.test(url);
+function canEmbed(url){ return /jit\.si|youtube\.com\/embed|youtu\.be\/|drive\.google|vimeo/.test(url); }
+function toEmbedUrl(url){
+  const yt = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/);
+  if(yt) return 'https://www.youtube.com/embed/'+yt[1];
+  return url;
 }
 function openClassEmbed(id){
   const c = classLinks.find(x=>x.id===id); if(!c) return;
@@ -1482,22 +1475,21 @@ function openClassEmbed(id){
   $('#embedTitle').textContent = c.name;
   const content = $('#embedContent');
   if(canEmbed(c.url)){
-    content.innerHTML = '<iframe src="'+esc(c.url)+'" allow="camera; microphone; fullscreen; display-capture; autoplay"></iframe>';
+    const embedUrl = toEmbedUrl(c.url);
+    content.innerHTML = '<iframe src="'+esc(embedUrl)+'" allow="camera; microphone; fullscreen; display-capture; autoplay"></iframe>';
     toast('ক্লাস লোড হচ্ছে...');
   } else {
-    content.innerHTML = '<div class="fallback"><p><strong>'+esc(detectPlatform(c.url))+'</strong> সরাসরি এমবেড করা যায় না।</p>'+
-      '<p>নিচের বাটনে ক্লিক করলে নতুন ট্যাবে খুলবে। পড়ার সেশন চললে টাইমার চালু থাকবে।</p>'+
-      '<button class="primary" onclick="window.open(\''+esc(c.url)+'\',\'_blank\')">'+esc(detectPlatform(c.url))+' খোলো</button></div>';
+    content.innerHTML = '<div class="fallback"><p><strong>'+esc(detectPlatform(c.url))+'</strong> সরাসরি এমবেড করা যায় না (নিরাপত্তার কারণে)।</p><p>নিচের বাটনে ক্লিক করলে নতুন ট্যাবে খুলবে। পড়ার সেশন চললে টাইমার চালু থাকবে।</p><button class="primary" id="openClassLink" data-url="'+esc(c.url)+'">'+esc(detectPlatform(c.url))+' নতুন ট্যাবে খোলো</button></div>';
+    $('#openClassLink').addEventListener('click', ()=>{ window.open(c.url, '_blank'); });
   }
 }
 $('#closeEmbed').addEventListener('click', ()=>{ $('#embedArea').style.display='none'; $('#embedContent').innerHTML=''; });
 function openClassEditor(id){
   const c = id ? classLinks.find(x=>x.id===id) : null;
-  const m=$('#genericModalContent');
-  m.innerHTML='<h2 class="modal-title">'+(id?'ক্লাস এডিট':'নতুন ক্লাস')+'</h2>'+
-    '<div class="field"><label>ক্লাসের নাম</label><input id="clName" type="text" placeholder="যেমন: পদার্থবিজ্ঞান" value="'+esc(c?c.name:'')+'"></div>'+
-    '<div class="field"><label>লিংক (URL)</label><input id="clUrl" type="url" placeholder="https://meet.google.com/..." value="'+esc(c?c.url:'')+'"></div>'+
-    '<p style="font-size:12px;color:var(--muted);line-height:1.6">Jitsi Meet হলে এখানেই এমবেড হবে। Meet/Zoom হলে নতুন ট্যাবে খুলবে, কিন্তু টাইমার চলবে।</p>'+
+  $('#genericModalContent').innerHTML='<h2 class="modal-title">'+(id?'ক্লাস এডিট':'নতুন ক্লাস')+'</h2>'+
+    '<div class="field"><label>ক্লাসের নাম</label><input id="clName" type="text" placeholder="যেমন: Physics Hunters" value="'+esc(c?c.name:'')+'"></div>'+
+    '<div class="field"><label>লিংক (URL)</label><input id="clUrl" type="url" placeholder="https://www.phyhunt.com/..." value="'+esc(c?c.url:'')+'"></div>'+
+    '<p style="font-size:12px;color:var(--muted);line-height:1.6">Jitsi/YouTube/Drive/Vimeo হলে এমবেড হবে। Physics Hunters/Meet/Zoom নতুন ট্যাবে খুলবে (টাইমার চলবে)।</p>'+
     '<div class="modal-actions"><button class="primary" id="saveClass">সেভ</button></div>';
   $('#genericModal').classList.add('show');
   $('#saveClass').addEventListener('click', async ()=>{
@@ -1511,18 +1503,18 @@ function populateClassSelect(){
   sel.innerHTML = '<option value="">ক্লাস সিলেক্ট করো</option>' + classLinks.map(c=>'<option value="'+c.id+'">'+esc(c.name)+'</option>').join('');
 }
 
-/* ===== STUDY NOTES ===== */
+/* ===== NOTES ===== */
 $('#newStudyNote').addEventListener('click', ()=>openStudyNoteEditor(null));
 $('#noteSearch').addEventListener('input', renderStudyNotes);
 function renderStudyNotes(){
   const box=$('#studyNotesList');
   const term=($('#noteSearch').value||'').trim().toLowerCase();
   const list = studyNotes.filter(n=>!term||(n.title||'').toLowerCase().includes(term)||(n.body||'').toLowerCase().includes(term)||(n.subject||'').toLowerCase().includes(term));
-  if(!list.length){ box.innerHTML='<p class="empty">'+(term?'কিছু পাওয়া যায়নি।':'এখনো নোট নেই।')+'</p>'; return; }
+  if(!list.length){ box.innerHTML = emptyState('&#128221;','এখনো নোট নেই','পড়ার সময় যা শিখো সেটা নোট করো','প্রথম নোট বানাও','emptyNoteBtn'); const b=$('#emptyNoteBtn'); if(b) b.addEventListener('click',()=>openStudyNoteEditor(null)); return; }
   box.innerHTML = list.map(n=>{
     const subj = n.subject?'<span class="tag">'+esc(n.subject)+'</span>':'';
-    return '<div class="study-note-card" style="background:var(--paper3);border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:4px;padding:11px 14px;margin-bottom:9px">'+
-      '<div class="study-note-title" style="font-family:Caveat,cursive;font-size:20px;color:var(--ink)">'+esc(n.title||'শিরোনামহীন')+' '+subj+'</div>'+
+    return '<div style="background:var(--paper3);border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:4px;padding:11px 14px;margin-bottom:9px">'+
+      '<div style="font-family:Caveat,cursive;font-size:20px;color:var(--ink)">'+esc(n.title||'শিরোনামহীন')+' '+subj+'</div>'+
       '<div style="font-size:13px;color:var(--ink2);line-height:1.6;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden">'+esc(n.body||'')+'</div>'+
       '<div style="font-size:11px;color:var(--muted2);margin-top:6px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px"><span>'+fmtRelative(n.updatedAt)+'</span>'+
       '<span><button class="tiny ghost edit-study-note" data-id="'+n.id+'">এডিট</button> <button class="tiny danger del-study-note" data-id="'+n.id+'">মুছো</button></span></div></div>';
@@ -1532,8 +1524,7 @@ function renderStudyNotes(){
 }
 function openStudyNoteEditor(id){
   const n = id ? studyNotes.find(x=>x.id===id) : null;
-  const c=$('#genericModalContent');
-  c.innerHTML='<h2 class="modal-title">'+(id?'নোট এডিট':'নতুন পড়ার নোট')+'</h2>'+
+  $('#genericModalContent').innerHTML='<h2 class="modal-title">'+(id?'নোট এডিট':'নতুন পড়ার নোট')+'</h2>'+
     '<div class="field"><label>বিষয়</label><input id="snSubject" type="text" placeholder="যেমন: গণিত / পদার্থবিজ্ঞান" value="'+esc(n?n.subject:'')+'"></div>'+
     '<div class="field"><label>শিরোনাম</label><input id="snTitle" type="text" value="'+esc(n?n.title:'')+'"></div>'+
     '<div class="field"><label>বিষয়বস্তু</label><textarea id="snBody" style="min-height:200px">'+esc(n?n.body:'')+'</textarea></div>'+
@@ -1555,51 +1546,36 @@ function startStudySession(){
   studyPausedAt=0; studyTotalPausedTime=0;
   studyStartTime=Date.now();
   studyEndTime=studyStartTime + studyDuration*60*1000;
-
-  // class mode
   if($('#classModeToggle').checked){
     const cid = $('#classSelect').value;
-    if(cid){
-      const c = classLinks.find(x=>x.id===cid);
-      if(c){ currentClassUrl=c.url; currentClassName=c.name; }
-    }
+    if(cid){ const c=classLinks.find(x=>x.id===cid); if(c){ currentClassUrl=c.url; currentClassName=c.name; } }
   } else { currentClassUrl=null; currentClassName=null; }
-
-  localStorage.setItem('studySession', JSON.stringify({
-    startTime:studyStartTime, duration:studyDuration, strict:studyStrict, distractions:0,
-    classUrl:currentClassUrl, className:currentClassName
-  }));
-
+  localStorage.setItem('studySession', JSON.stringify({startTime:studyStartTime,duration:studyDuration,strict:studyStrict,distractions:0,classUrl:currentClassUrl,className:currentClassName}));
   $('#studySetupView').style.display='none';
   $('#studyActiveView').style.display='block';
   $('#distractionBadge').style.display = studyStrict?'block':'none';
   $('#distractionBadge').textContent = 'বাধা: ০';
   $('#sessionModeLabel').textContent = studyStrict?'কঠোর মোড':(currentClassName?'ক্লাস: '+currentClassName:'পড়ার সময়');
   $('#quickNotePad').value='';
-
-  if($('#ambientToggle').checked) startAmbient($('#soundSelect').value);
-
-  // class embed in active view
   const ce=$('#classEmbedActive');
   if(currentClassUrl){
     if(canEmbed(currentClassUrl)){
       ce.style.display='block';
-      ce.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span style="font-family:Caveat,cursive;font-size:20px;color:var(--blue)">'+esc(currentClassName)+'</span><button class="tiny ghost" id="closeActiveClass">লুকাও</button></div><div style="height:400px;border-radius:6px;overflow:hidden"><iframe src="'+esc(currentClassUrl)+'" style="width:100%;height:100%;border:0" allow="camera; microphone; fullscreen; autoplay; display-capture"></iframe></div>';
+      ce.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px"><span style="font-family:Caveat,cursive;font-size:20px;color:var(--blue)">'+esc(currentClassName)+'</span><button class="tiny ghost" id="closeActiveClass">লুকাও</button></div><div style="height:400px;border-radius:6px;overflow:hidden"><iframe src="'+esc(toEmbedUrl(currentClassUrl))+'" style="width:100%;height:100%;border:0" allow="camera; microphone; fullscreen; autoplay; display-capture"></iframe></div>';
       $('#closeActiveClass').addEventListener('click', ()=>{ ce.style.display='none'; });
     } else {
       ce.style.display='block';
-      ce.innerHTML='<div style="background:var(--paper2);border:1px dashed var(--blue);border-radius:6px;padding:14px;text-align:center"><p style="margin:0 0 10px;font-size:13px;color:var(--muted)">'+esc(detectPlatform(currentClassUrl))+' এমবেড হয় না — নতুন ট্যাবে খোলো</p><button class="primary" onclick="window.open(\''+esc(currentClassUrl)+'\',\'_blank\')">'+esc(currentClassName)+' খোলো</button></div>';
+      ce.innerHTML='<div style="background:var(--paper2);border:1px dashed var(--blue);border-radius:6px;padding:14px;text-align:center"><p style="margin:0 0 10px;font-size:13px;color:var(--muted)">'+esc(detectPlatform(currentClassUrl))+' এমবেড হয় না — নতুন ট্যাবে খোলো</p><button class="primary" id="activeClassLink">'+esc(currentClassName)+' নতুন ট্যাবে খোলো</button></div>';
+      $('#activeClassLink').addEventListener('click', ()=>{ window.open(currentClassUrl,'_blank'); });
     }
   } else { ce.style.display='none'; ce.innerHTML=''; }
-
-  updNavLock();
-  tickStudy();
+  updNavLock(); tickStudy();
   studyTimer=setInterval(tickStudy,1000);
   toast('পড়া শুরু!');
 }
 function tickStudy(){
   if(!studyActive) return;
-  if(studyPaused){ return; }
+  if(studyPaused) return;
   const now=Date.now();
   const remain=studyEndTime - now;
   const total=studyDuration*60*1000;
@@ -1619,7 +1595,7 @@ $('#pauseStudyBtn').addEventListener('click', ()=>{
 });
 $('#emergencyStop').addEventListener('click', ()=>{
   if(!studyActive) return;
-  const t = prompt('সেশন বাতিল করতে "STOP" লেখো (Streak ভাঙবে):');
+  const t = prompt('সেশন বাতিল করতে "STOP" লেখো:');
   if(t!=='STOP') return;
   endStudySession(false,true);
 });
@@ -1627,7 +1603,6 @@ async function endStudySession(completed, emergency){
   if(!studyActive) return;
   studyActive=false;
   clearInterval(studyTimer);
-  stopAmbient();
   localStorage.removeItem('studySession');
   const now=Date.now();
   const planned=studyDuration;
@@ -1635,11 +1610,8 @@ async function endStudySession(completed, emergency){
   $('#studyActiveView').style.display='none';
   $('#studySetupView').style.display='block';
   updNavLock();
-  try {
-    await addDoc(collection(db,'users',uid,'study_sessions'),{
-      startedAt:studyStartTime, endedAt:now, plannedMin:planned, actualMin,
-      completed:!!completed, emergency:!!emergency, distractions:studyDistractions, strict:studyStrict
-    });
+  try{
+    await addDoc(collection(db,'users',uid,'study_sessions'),{startedAt:studyStartTime,endedAt:now,plannedMin:planned,actualMin,completed:!!completed,emergency:!!emergency,distractions:studyDistractions,strict:studyStrict});
     if(completed) await bumpStudyStreak();
     if(completed) toast('চমৎকার! '+fmtDur(actualMin)+' পড়লে।');
   } catch(e){ console.error(e); }
@@ -1659,8 +1631,7 @@ async function bumpStudyStreak(){
   try{ await updateDoc(doc(db,'users',uid),{studyStreak:ns}); userDocCache.studyStreak=ns; }catch(e){}
 }
 function showBreakModal(){
-  const c=$('#breakModalContent');
-  c.innerHTML='<div style="text-align:center;padding:10px 0"><div style="font-size:60px;line-height:1">&#9749;</div><div style="font-family:Caveat,cursive;font-size:34px;color:var(--accent);margin:8px 0">বিরতি নাও!</div><div id="breakTimer" style="font-family:Caveat,cursive;font-size:56px;color:var(--ink);line-height:1;margin:14px 0">05:00</div>'+
+  $('#breakModalContent').innerHTML='<div style="text-align:center;padding:10px 0"><div style="font-size:60px;line-height:1">&#9749;</div><div style="font-family:Caveat,cursive;font-size:34px;color:var(--accent);margin:8px 0">বিরতি নাও!</div><div id="breakTimer" style="font-family:Caveat,cursive;font-size:56px;color:var(--ink);line-height:1;margin:14px 0">05:00</div>'+
     '<div style="font-size:13px;color:var(--muted);line-height:1.7;margin:12px 0;text-align:left;background:var(--paper2);padding:12px 14px;border-radius:6px"><b>এই ৫ মিনিটে:</b><br>• গভীর শ্বাস নাও<br>• পানি খাও<br>• হাঁটো<br>• জানালা দিয়ে তাকাও</div>'+
     '<button class="primary big" id="nextSessionBtn" style="margin-top:6px">আরেকটা সেশন</button><button class="ghost" id="stopBreakBtn" style="margin-top:8px;width:100%">আজকের জন্য শেষ</button></div>';
   $('#breakModal').classList.add('show');
@@ -1671,7 +1642,7 @@ function showBreakModal(){
 }
 function restoreStudySession(){
   const raw=localStorage.getItem('studySession'); if(!raw) return;
-  try {
+  try{
     const s=JSON.parse(raw);
     if(Date.now() >= s.startTime + s.duration*60*1000){ localStorage.removeItem('studySession'); return; }
     if(!confirm('আগের পড়ার সেশন এখনো চলছে। চালু রাখবে?')){ localStorage.removeItem('studySession'); return; }
@@ -1702,47 +1673,12 @@ document.addEventListener('visibilitychange', ()=>{
   }
 });
 $('#warnBackBtn').addEventListener('click', ()=>$('#warnOverlay').classList.remove('show'));
-
 $('#saveQuickNote').addEventListener('click', async ()=>{
   const text=$('#quickNotePad').value.trim(); if(!text) return toast('কিছু লেখো');
   try{ await addDoc(collection(db,'users',uid,'study_notes'),{title:'দ্রুত নোট - '+new Date().toLocaleString('bn-BD',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}),body:text,createdAt:Date.now(),updatedAt:Date.now()}); $('#quickNotePad').value=''; toast('সেভ'); }catch(e){ toast('সমস্যা'); }
 });
 
-/* ===== AMBIENT SOUND ===== */
-function startAmbient(type){
-  stopAmbient();
-  try {
-    const ctx=new (window.AudioContext||window.webkitAudioContext)();
-    const bufSize=2*ctx.sampleRate;
-    const buf=ctx.createBuffer(1,bufSize,ctx.sampleRate);
-    const out=buf.getChannelData(0);
-    let last=0;
-    for(let i=0;i<bufSize;i++){
-      const w=Math.random()*2-1;
-      out[i]=(last + (type==='fan'?0.05:0.02)*w)/1.02;
-      last=out[i];
-      out[i] *= (type==='rain'?3.5 : type==='fan'?2 : type==='ocean'?4 : 3);
-    }
-    const src=ctx.createBufferSource(); src.buffer=buf; src.loop=true;
-    const gain=ctx.createGain(); gain.gain.value = type==='lofi'?0.06:0.14;
-    let node = src;
-    if(type==='fan'){
-      const f=ctx.createBiquadFilter(); f.type='lowpass'; f.frequency.value=500;
-      node = src.connect(f); f.connect(gain);
-    } else if(type==='rain'){
-      const f=ctx.createBiquadFilter(); f.type='highpass'; f.frequency.value=400;
-      node = src.connect(f); f.connect(gain);
-    } else if(type==='ocean'){
-      const f=ctx.createBiquadFilter(); f.type='lowpass'; f.frequency.value=800;
-      src.connect(f); f.connect(gain);
-    } else { src.connect(gain); }
-    gain.connect(ctx.destination); src.start();
-    studyAmbient={ctx,src,gain};
-  } catch(e){ console.error(e); }
-}
-function stopAmbient(){ if(studyAmbient){ try{ studyAmbient.src.stop(); studyAmbient.ctx.close(); }catch(e){} studyAmbient=null; } }
-
-/* ===== STUDY STATS + FOREST + WEEKLY ===== */
+/* ===== STATS + FOREST + WEEKLY ===== */
 function loadStudyStats(){
   const totalMin=studySessions.reduce((s,x)=>s+(x.actualMin||0),0);
   const hours=Math.round((totalMin/60)*10)/10;
@@ -1757,32 +1693,16 @@ function loadStudyStats(){
   $('#dsStudySessions').textContent=toBn(sessions);
   $('#dsBestDay').textContent=toBn(bestDay);
   $('#dsStudyStreak').textContent=toBn(studyStreak);
-
-  // weekly chart
   const wc=$('#weekChart');
   const dayLabels=['রবি','সোম','মঙ্গল','বুধ','বৃহঃ','শুক্র','শনি'];
-  let maxMin=1;
-  const weekData=[];
-  for(let i=6;i>=0;i--){
-    const d=new Date(); d.setDate(d.getDate()-i);
-    const k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-    const m=dayMin[k]||0;
-    weekData.push({day:dayLabels[d.getDay()], min:m});
-    if(m>maxMin) maxMin=m;
-  }
-  wc.innerHTML = weekData.map(wd=>{
-    const h=Math.max(4, Math.round((wd.min/maxMin)*100));
-    return '<div class="week-bar"><div class="week-bar-fill" style="height:'+h+'%"><span class="val">'+(wd.min>0?toBn(wd.min):'')+'</span></div><div class="week-bar-label">'+wd.day+'</div></div>';
-  }).join('');
-
-  // heatmap
+  let maxMin=1; const weekData=[];
+  for(let i=6;i>=0;i--){ const d=new Date(); d.setDate(d.getDate()-i); const k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); const m=dayMin[k]||0; weekData.push({day:dayLabels[d.getDay()],min:m}); if(m>maxMin) maxMin=m; }
+  wc.innerHTML = weekData.map(wd=>{ const h=Math.max(4, Math.round((wd.min/maxMin)*100)); return '<div class="week-bar"><div class="week-bar-fill" style="height:'+h+'%"><span class="val">'+(wd.min>0?toBn(wd.min):'')+'</span></div><div class="week-bar-label">'+wd.day+'</div></div>'; }).join('');
   let html='';
   for(let i=29;i>=0;i--){ const d=new Date(); d.setDate(d.getDate()-i); const k=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); const m=dayMin[k]||0; let lv=''; if(m>=120)lv='l4';else if(m>=60)lv='l3';else if(m>=25)lv='l2';else if(m>=1)lv='l1'; html+='<div class="heat-cell '+lv+'" title="'+k+': '+m+' মিনিট"></div>'; }
   $('#studyHeatmap').innerHTML = html;
-
   const stats={sessions,hours,streak:studyStreak,longest,perfect,bestDay};
   $('#studyBadgesGrid').innerHTML = STUDY_BADGES.map(b=>{ const e=b.check(stats); return '<div class="badge-item '+(e?'earned':'')+'"><div class="badge-icon">'+b.icon+'</div><div class="badge-name">'+b.name+'</div><div class="badge-desc">'+b.desc+'</div></div>'; }).join('');
-
   renderForest(totalMin);
 }
 function renderForest(totalMin){
@@ -1792,7 +1712,6 @@ function renderForest(totalMin){
   if(treeCount===0){ box.innerHTML='<p style="color:#5a5048;font-size:13px">পড়া শুরু করলে এখানে গাছ জন্মাবে...</p>'; return; }
   let html='';
   for(let i=0;i<treeCount;i++){
-    const age = i/treeCount;
     let cls='seed', emoji='&#127793;';
     if(hours>=50) { cls='ancient'; emoji='&#127795;'; }
     else if(hours>=20) { cls='tree'; emoji='&#127794;'; }
@@ -1803,31 +1722,23 @@ function renderForest(totalMin){
   box.innerHTML = html;
 }
 
-/* ===== STUDY ROOM ===== */
+/* ===== ROOM ===== */
 $('#createRoomBtn').addEventListener('click', async ()=>{
   const code = Math.random().toString(36).substring(2,8).toUpperCase();
-  try {
-    await setDoc(doc(db,'study_rooms',code),{
-      createdBy:uid, createdAt:Date.now(), members:[uid], memberNames:{[uid]:currentUser.displayName||currentUser.email.split('@')[0]}
-    });
-    joinRoomInternal(code);
-  } catch(e){ toast('রুম বানানো যায়নি'); }
+  try{ await setDoc(doc(db,'study_rooms',code),{createdBy:uid,createdAt:Date.now(),members:[uid],memberNames:{[uid]:currentUser.displayName||currentUser.email.split('@')[0]}}); joinRoomInternal(code); }catch(e){ toast('রুম বানানো যায়নি'); }
 });
 $('#joinRoomBtn').addEventListener('click', async ()=>{
   const code = ($('#joinRoomCode').value||'').trim().toUpperCase();
   if(!code || code.length!==6) return toast('৬ অক্ষরের কোড দাও');
-  try {
+  try{
     const snap = await getDoc(doc(db,'study_rooms',code));
     if(!snap.exists()) return toast('রুম পাওয়া যায়নি');
     const data = snap.data();
     const names = data.memberNames || {};
     names[uid] = currentUser.displayName||currentUser.email.split('@')[0];
-    await updateDoc(doc(db,'study_rooms',code),{
-      members: arrayUnion(uid),
-      memberNames: names
-    });
+    await updateDoc(doc(db,'study_rooms',code),{members:arrayUnion(uid),memberNames:names});
     joinRoomInternal(code);
-  } catch(e){ toast('জয়েন করা যায়নি'); }
+  }catch(e){ toast('জয়েন করা যায়নি'); }
 });
 function joinRoomInternal(code){
   currentRoomCode = code;
@@ -1836,37 +1747,23 @@ function joinRoomInternal(code){
   $('#roomCodeDisplay').textContent = code;
   if(roomUnsub) roomUnsub();
   roomUnsub = onSnapshot(doc(db,'study_rooms',code), snap=>{
-    if(!snap.exists()){ toast('রুম বন্ধ হয়ে গেছে'); leaveRoom(); return; }
+    if(!snap.exists()){ toast('রুম বন্ধ'); leaveRoom(); return; }
     const d = snap.data();
     const members = d.members||[], names = d.memberNames||{};
     const now = Date.now();
-    const activeMembers = members.filter(m=> now - (d[`ping_${m}`]||0) < 90000);
+    const activeMembers = members.filter(m=> now - (d['ping_'+m]||0) < 90000);
     $('#roomMembers').innerHTML = activeMembers.map(m=>'<span class="room-member"><span class="dot"></span>'+esc(names[m]||m.slice(0,6))+(m===uid?' (তুমি)':'')+'</span>').join('') || '<p class="empty" style="padding:6px">এখন কেউ নেই</p>';
   });
-  // heartbeat
   clearInterval(window._roomPing);
-  window._roomPing = setInterval(async ()=>{
-    if(!currentRoomCode) return;
-    try{ await updateDoc(doc(db,'study_rooms',currentRoomCode),{[`ping_${uid}`]:Date.now()}); }catch(e){}
-  }, 30000);
-  updateDoc(doc(db,'study_rooms',code),{[`ping_${uid}`]:Date.now()}).catch(()=>{});
+  window._roomPing = setInterval(async ()=>{ if(!currentRoomCode) return; try{ await updateDoc(doc(db,'study_rooms',currentRoomCode),{['ping_'+uid]:Date.now()}); }catch(e){} }, 30000);
+  updateDoc(doc(db,'study_rooms',code),{['ping_'+uid]:Date.now()}).catch(()=>{});
 }
-$('#copyRoomCode').addEventListener('click', ()=>{
-  if(!currentRoomCode) return;
-  navigator.clipboard.writeText(currentRoomCode).then(()=>toast('কপি হয়েছে'));
-});
+$('#copyRoomCode').addEventListener('click', ()=>{ if(!currentRoomCode) return; navigator.clipboard.writeText(currentRoomCode).then(()=>toast('কপি হয়েছে')); });
 $('#leaveRoomBtn').addEventListener('click', leaveRoom);
 async function leaveRoom(){
   if(!currentRoomCode) return;
   const code=currentRoomCode;
-  try {
-    const snap = await getDoc(doc(db,'study_rooms',code));
-    if(snap.exists()){
-      const names = snap.data().memberNames || {};
-      delete names[uid];
-      await updateDoc(doc(db,'study_rooms',code),{members:arrayRemove(uid), memberNames:names});
-    }
-  } catch(e){}
+  try{ const snap = await getDoc(doc(db,'study_rooms',code)); if(snap.exists()){ const names = snap.data().memberNames || {}; delete names[uid]; await updateDoc(doc(db,'study_rooms',code),{members:arrayRemove(uid),memberNames:names}); } }catch(e){}
   if(roomUnsub){ roomUnsub(); roomUnsub=null; }
   clearInterval(window._roomPing);
   currentRoomCode=null;
@@ -1877,7 +1774,7 @@ async function leaveRoom(){
 /* ===== DASHBOARD ===== */
 $('#refreshDash').addEventListener('click', loadDashboard);
 async function loadDashboard(){
-  try {
+  try{
     if(!loadedTabs.exams){ loadedTabs.exams=true; subExams(); }
     if(!loadedTabs.sessions){ loadedTabs.sessions=true; subStudySessions(); }
     const total=entries.length;
@@ -1901,7 +1798,6 @@ async function loadDashboard(){
     if(publicCount>0){ try{ const q=query(collection(db,'public_entries'),where('authorId','==',uid)); const snap=await getDocs(q); snap.forEach(d=>{totalLikes += (d.data().likedBy||[]).length;}); }catch(e){} }
     const stats={total,poems,stories,words,bestStreak,uniqueTags:tags.size,publicCount,totalLikes};
     $('#badgesGrid').innerHTML = ALL_BADGES.map(b=>{ const e=b.check(stats); return '<div class="badge-item '+(e?'earned':'')+'"><div class="badge-icon">'+b.icon+'</div><div class="badge-name">'+b.name+'</div><div class="badge-desc">'+b.desc+'</div></div>'; }).join('');
-    // forest + goal + exam
     renderForest(totalStudyMin);
     updGoalUI();
     renderDashExams();
@@ -1932,7 +1828,7 @@ $('#adminSearch').addEventListener('input', ()=>renderUsers(lastUsers));
 async function loadAdminData(){
   if(!isAdmin) return;
   $('#userList').innerHTML='<p class="empty">লোড হচ্ছে...</p>';
-  try {
+  try{
     const us=await getDocs(collection(db,'users'));
     lastUsers=us.docs.map(d=>Object.assign({id:d.id},d.data()));
     let totalE=0,totalStudy=0,totalSessions=0;
@@ -1941,13 +1837,7 @@ async function loadAdminData(){
       const es=await getDocs(collection(db,'users',u.id,'entries'));
       userEntryCounts[u.id]={total:es.size,studyMin:0,sessions:0};
       totalE += es.size;
-      try{
-        const ss=await getDocs(collection(db,'users',u.id,'study_sessions'));
-        let m=0; ss.forEach(d=>{ m+=d.data().actualMin||0; });
-        userEntryCounts[u.id].studyMin=m;
-        userEntryCounts[u.id].sessions=ss.size;
-        totalStudy += m; totalSessions += ss.size;
-      }catch(e){}
+      try{ const ss=await getDocs(collection(db,'users',u.id,'study_sessions')); let m=0; ss.forEach(d=>{ m+=d.data().actualMin||0; }); userEntryCounts[u.id].studyMin=m; userEntryCounts[u.id].sessions=ss.size; totalStudy += m; totalSessions += ss.size; }catch(e){}
     }));
     $('#statUsers').textContent=toBn(lastUsers.length);
     $('#statEntries').textContent=toBn(totalE);
@@ -1982,7 +1872,7 @@ async function showUserEntries(targetUid){
   if(panel.style.display==='block'){ panel.style.display='none'; return; }
   panel.style.display='block';
   panel.innerHTML='<p class="empty">লোড হচ্ছে...</p>';
-  try {
+  try{
     const snap=await getDocs(collection(db,'users',targetUid,'entries'));
     const list=snap.docs.map(d=>Object.assign({id:d.id},d.data())).sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0));
     if(!list.length){ panel.innerHTML='<p class="empty">কোনো লেখা নেই।</p>'; return; }
@@ -1997,7 +1887,7 @@ document.addEventListener('click', async e=>{
   }
 });
 
-/* ===== INITIAL SKELETON HIDE ===== */
+/* ============ INITIAL ============ */
 setTimeout(()=>{ if($('#skeleton').style.display!=='none' && !auth.currentUser){ $('#skeleton').style.display='none'; $('#authScreen').style.display='flex'; } }, 800);
 </script>
 </body>
