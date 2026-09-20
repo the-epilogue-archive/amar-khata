@@ -1953,14 +1953,18 @@ async function openChatWith(partnerId){
   if(!partnerId || partnerId === uid) return;
   const chatId = [uid, partnerId].sort().join('_');
   try {
-    const ref = doc(db,'chats',chatId);
-    const snap = await getDoc(ref);
-    if(!snap.exists()){
-      const partnerProfile = (await getDoc(doc(db,'user_profiles',partnerId))).data() || {};
-      await setDoc(ref, { participants: [uid, partnerId], names: { [uid]: (userDocCache&&userDocCache.displayName)||currentUser.displayName||currentUser.email.split('@')[0], [partnerId]: partnerProfile.displayName || 'ব্যবহারকারী' }, avatars: { [uid]: (userDocCache&&userDocCache.avatar)||null, [partnerId]: partnerProfile.avatar || null }, unread: { [uid]: 0, [partnerId]: 0 }, lastMessage: '', lastAt: Date.now(), createdAt: Date.now() });
-    }
+    const partnerProfile = (await getDoc(doc(db,'user_profiles',partnerId))).data() || {};
+    await setDoc(doc(db,'chats',chatId), {
+      participants: [uid, partnerId],
+      names: { [uid]: (userDocCache&&userDocCache.displayName)||currentUser.displayName||currentUser.email.split('@')[0], [partnerId]: partnerProfile.displayName || 'ব্যবহারকারী' },
+      avatars: { [uid]: (userDocCache&&userDocCache.avatar)||null, [partnerId]: partnerProfile.avatar || null },
+      unread: { [uid]: 0, [partnerId]: 0 },
+      lastMessage: '',
+      lastAt: Date.now(),
+      createdAt: Date.now()
+    }, { merge: true });
     openChat(chatId, partnerId);
-  } catch(err){ toast('সমস্যা'); }
+  } catch(err){ console.error('chat open:', err); toast('সমস্যা: '+err.message); }
 }
 async function openChat(chatId, partnerId){
   currentChatId = chatId; currentChatPartner = partnerId;
@@ -2435,10 +2439,35 @@ async function showUserEntries(targetUid){
   try{ const snap=await getDocs(collection(db,'users',targetUid,'entries')); const list=snap.docs.map(d=>Object.assign({id:d.id},d.data())).sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0)); if(!list.length){ panel.innerHTML='<p class="empty">কোনো লেখা নেই।</p>'; return; } panel.innerHTML='<h4>লেখা ('+toBn(list.length)+')</h4>'+list.map(e=>'<div class="entry-mini"><div style="min-width:0;flex:1"><div class="entry-mini-title">'+esc(e.title||'শিরোনামহীন')+'</div><div class="entry-mini-meta">'+esc(e.type||'')+' · '+fmtDate(e.updatedAt||e.createdAt)+'</div></div><button class="danger tiny del-entry" data-uid="'+targetUid+'" data-eid="'+e.id+'">মুছো</button></div>').join(''); } catch(err){ panel.innerHTML='<p class="empty">'+esc(err.message)+'</p>'; }
 }
 document.addEventListener('click', async e=>{
-  if(e.target.classList.contains('del-entry')){
-    const tu=e.target.dataset.uid, eid=e.target.dataset.eid;
-    if(!confirm('মুছে?')) return;
-    try{ await deleteDoc(doc(db,'users',tu,'entries',eid)); try{await deleteDoc(doc(db,'public_entries',eid));}catch(err){} const p=document.getElementById('panel-'+tu); if(p){ p.style.display='none'; await showUserEntries(tu); } toast('মুছে ✓'); }catch(err){ toast('সমস্যা'); }
+if(e.target.id === 'followBtn'){
+    const targetUid = e.target.dataset.uid;
+    if(!targetUid || targetUid===uid) return;
+    const followId = uid+'_'+targetUid;
+    const ref = doc(db,'follows',followId);
+    try {
+      const exists = (await getDoc(ref)).exists();
+      if(exists){
+        // আনফলো
+        await deleteDoc(ref);
+        try { await updateDoc(doc(db,'user_profiles',uid),{following: increment(-1)}); } catch(err){}
+        try { await updateDoc(doc(db,'user_profiles',targetUid),{followers: increment(-1)}); } catch(err){}
+        try { await updateDoc(doc(db,'users',uid),{followingCount: increment(-1)}); } catch(err){}
+        try { await updateDoc(doc(db,'users',targetUid),{followersCount: increment(-1)}); } catch(err){}
+        toast('আনফলো ✓');
+      } else {
+        // ফলো
+        await setDoc(ref,{follower:uid,following:targetUid,at:Date.now()});
+        try { await updateDoc(doc(db,'user_profiles',uid),{following: increment(1)}); } catch(err){ console.warn('following count', err); }
+        try { await updateDoc(doc(db,'user_profiles',targetUid),{followers: increment(1)}); } catch(err){ console.warn('followers count', err); }
+        try { await updateDoc(doc(db,'users',uid),{followingCount: increment(1)}); } catch(err){}
+        try { await updateDoc(doc(db,'users',targetUid),{followersCount: increment(1)}); } catch(err){}
+        try { await createNotification(targetUid, 'follow', null, 'তোমাকে ফলো করছে'); } catch(err){}
+        try { await logActivity('follow', targetUid); } catch(err){}
+        toast('ফলো ✓');
+      }
+      profileCache = {};
+      openProfileView(targetUid);
+    } catch(err){ console.error('follow:', err); toast('সমস্যা: '+err.message); }
   }
 });
 
